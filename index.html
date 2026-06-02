@@ -451,8 +451,8 @@ body.light .hero-btns .btn-o{background:rgba(0,0,0,.06);border-color:rgba(0,0,0,
       <div class="pprice">desde <strong>800 MT</strong>/h</div>
       <div class="contact-btns">
         <button class="cbtn cbtn-chat" onclick="abrirChat('carlos')">💬 Chat</button>
-        <a href="tel:+258840000001" style="text-decoration:none;"><button class="cbtn cbtn-call" style="width:100%">📞 Ligar</button></a>
-        <a href="https://wa.me/258840000001?text=Ol%C3%A1!+Vi+o+seu+perfil+no+Servi%C3%A7os+J%C3%A1+Moz." target="_blank" style="text-decoration:none;"><button class="cbtn cbtn-wa" style="width:100%">📱 WhatsApp</button></a>
+        <a href="tel:+258840000001"><button class="cbtn cbtn-call" style="width:100%">📞 Ligar</button></a>
+        <a href="https://wa.me/258840000001?text=Ol%C3%A1!+Vi+o+seu+perfil+no+Servi%C3%A7os+J%C3%A1+Moz." target="_blank"><button class="cbtn cbtn-wa" style="width:100%">📱 WhatsApp</button></a>
       </div>
     </div>
     <div class="prov-card">
@@ -462,8 +462,8 @@ body.light .hero-btns .btn-o{background:rgba(0,0,0,.06);border-color:rgba(0,0,0,
       <div class="pprice">desde <strong>1.500 MT</strong></div>
       <div class="contact-btns">
         <button class="cbtn cbtn-chat" onclick="abrirChat('fatima')">💬 Chat</button>
-        <a href="tel:+258860000002" style="text-decoration:none;"><button class="cbtn cbtn-call" style="width:100%">📞 Ligar</button></a>
-        <a href="https://wa.me/258860000002?text=Ol%C3%A1!+Vi+o+seu+perfil+no+Servi%C3%A7os+J%C3%A1+Moz." target="_blank" style="text-decoration:none;"><button class="cbtn cbtn-wa" style="width:100%">📱 WhatsApp</button></a>
+        <a href="tel:+258860000002"><button class="cbtn cbtn-call" style="width:100%">📞 Ligar</button></a>
+        <a href="https://wa.me/258860000002?text=Ol%C3%A1!+Vi+o+seu+perfil+no+Servi%C3%A7os+J%C3%A1+Moz." target="_blank"><button class="cbtn cbtn-wa" style="width:100%">📱 WhatsApp</button></a>
       </div>
     </div>
     <div class="prov-card">
@@ -473,9 +473,12 @@ body.light .hero-btns .btn-o{background:rgba(0,0,0,.06);border-color:rgba(0,0,0,
       <div class="pprice">desde <strong>600 MT</strong>/h</div>
       <div class="contact-btns">
         <button class="cbtn cbtn-chat" onclick="abrirChat('joao')">💬 Chat</button>
-        <a href="tel:+258870000003" style="text-decoration:none;"><button class="cbtn cbtn-call" style="width:100%">📞 Ligar</button></a>
-        <a href="https://wa.me/258870000003?text=Ol%C3%A1!+Vi+o+seu+perfil+no+Servi%C3%A7os+J%C3%A1+Moz." target="_blank" style="text-decoration:none;"><button class="cbtn cbtn-wa" style="width:100%">📱 WhatsApp</button></a>
+        <a href="tel:+258870000003"><button class="cbtn cbtn-call" style="width:100%">📞 Ligar</button></a>
+        <a href="https://wa.me/258870000003?text=Ol%C3%A1!+Vi+o+seu+perfil+no+Servi%C3%A7os+J%C3%A1+Moz." target="_blank"><button class="cbtn cbtn-wa" style="width:100%">📱 WhatsApp</button></a>
       </div>
+    </div>
+    <div style="background:rgba(0,168,107,.08);border:1px solid rgba(0,168,107,.2);border-radius:12px;padding:14px;text-align:center;font-size:13px;color:var(--muted);margin-top:4px;">
+      💡 Os números de telefone reais aparecem quando os prestadores se registam na plataforma.
     </div>
   </div>
 </div>
@@ -624,10 +627,14 @@ body.light .hero-btns .btn-o{background:rgba(0,0,0,.06);border-color:rgba(0,0,0,
     <div style="font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:8px;">A conectar ao operador...</div>
     <div style="font-size:12px;color:var(--muted);line-height:1.8;">
       Pedido de PIN enviado para<br>
-      <strong id="proc-num" style="color:var(--g);"></strong><br><br>
-      📩 <strong style="color:var(--g);font-size:11px;">"Serviços Já Moz: Confirme o pagamento."</strong><br><br>
-      Insira o seu PIN no telemóvel...
+      <strong id="proc-num" style="color:var(--g);font-size:15px;"></strong><br><br>
+      📩 Verifique o seu telemóvel e insira o PIN M-Pesa quando solicitado.<br><br>
+      <strong style="color:var(--g);font-size:11px;">"Serviços Já Moz: Confirme o pagamento."</strong>
     </div>
+    <div style="margin-top:20px;font-size:13px;color:var(--muted);">A confirmar em <span id="countdown">5</span>s...</div>
+    <button class="btn-full btn-full-g" id="btn-confirmar" style="margin-top:14px;display:none;" onclick="confirmarManual()">
+      ✅ Já inseri o PIN — Confirmar
+    </button>
   </div>
 </div>
 
@@ -806,6 +813,22 @@ body.light .hero-btns .btn-o{background:rgba(0,0,0,.06);border-color:rgba(0,0,0,
   </div>
 </div>
 
+<!-- SLIDE 13: LOGIN CLIENTE -->
+<div class="slide center" id="s13">
+  <div class="login-box">
+    <div class="login-icon">👤</div>
+    <div class="login-title">Entre para contactar</div>
+    <div class="login-sub">Precisa de uma conta para contactar prestadores.</div>
+    <div class="fg"><label class="fl">Nome completo *</label><input class="fi" type="text" id="cl-nome" placeholder="Ex: João Silva"></div>
+    <div class="fg"><label class="fl">Telemóvel *</label><input class="fi" type="tel" id="cl-tel" placeholder="84 XXX XXXX"></div>
+    <div class="fg"><label class="fl">Email</label><input class="fi" type="email" id="cl-email" placeholder="exemplo@gmail.com"></div>
+    <div class="login-err" id="cl-err">❌ Por favor preencha os campos obrigatórios.</div>
+    <button class="btn-full btn-full-g" onclick="loginCliente()">Entrar e contactar →</button>
+    <button class="btn-full btn-full-o" onclick="ir(0)">← Início</button>
+    <div class="login-hint" style="margin-top:10px;">Já tem conta? Basta preencher o nome e telemóvel.<br>Os seus dados ficam guardados para a próxima visita.</div>
+  </div>
+</div>
+
 </div><!-- /track -->
 </div><!-- /slides-wrap -->
 
@@ -819,10 +842,12 @@ let plano={nome:'Profissional',preco:200};
 let pagMetodo='mpesa';
 let pagamentos=[];
 let convActual='carlos';
+let clienteLogado=false; // controla se o cliente está registado
+let clienteNome='';
 
 const SLIDES_LABELS=['Início','Pesquisar','Categorias','Prestadores','Como funciona',
-  'Plano','Dados','Pagamento','A processar','Confirmação','Chat','Painel','Acesso Dono'];
-const SLIDES_MAIN=[0,1,2,3,4,10,11,12]; // slides com dots
+  'Plano','Dados','Pagamento','A processar','Confirmação','Chat','Painel','Acesso Dono','Login Cliente'];
+const SLIDES_MAIN=[0,1,2,3,4,10,11,12];
 
 // ===== CONVOS CHAT =====
 const convos={
@@ -866,19 +891,15 @@ const prestadores=[
 
 // ===== NAVEGAÇÃO =====
 function ir(idx){
-  cur=Math.max(0,Math.min(idx,12));
+  cur=Math.max(0,Math.min(idx,13));
   const track=document.getElementById('track');
   track.style.transform='translateX(-'+cur+'00vw)';
   document.getElementById('tb-label').textContent=SLIDES_LABELS[cur]||'';
-  // Setas
   document.getElementById('arrow-l').disabled=cur===0;
-  const regFlow=[5,6,7,8,9];
-  document.getElementById('arrow-r').disabled=cur===12||regFlow.includes(cur);
-  // Dots
+  const regFlow=[5,6,7,8,9,13];
+  document.getElementById('arrow-r').disabled=cur===13||regFlow.includes(cur);
   document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('on',SLIDES_MAIN[i]===cur));
-  // Chat
   if(cur===10) renderChat(convActual);
-  // Scroll topo
   setTimeout(()=>{
     const s=document.getElementById('s'+cur);
     if(s) s.scrollTop=0;
@@ -886,9 +907,9 @@ function ir(idx){
 }
 
 function navL(){
-  const regFlow=[5,6,7,8,9];
+  const regFlow=[5,6,7,8,9,13];
   if(regFlow.includes(cur)){
-    if(cur===5) ir(0); else ir(cur-1);
+    if(cur===5||cur===13) ir(0); else ir(cur-1);
   } else { if(cur>0) ir(cur-1); }
 }
 function navR(){
@@ -982,12 +1003,32 @@ function validarDados(){
   if(!n||!t||!c||!p||!d||!b){alert('Por favor preencha todos os campos obrigatórios (*)');return;}
   ir(7);
 }
+let numPagamento='';
 function pagar(){
   const num=document.getElementById('inp-pay').value;
   if(!num){alert('Por favor insira o número de telemóvel para pagamento.');return;}
+  numPagamento=num;
   document.getElementById('proc-num').textContent=num;
+  document.getElementById('btn-confirmar').style.display='none';
+  document.getElementById('countdown').textContent='5';
   ir(8);
-  setTimeout(()=>confirmarPag(num),3000);
+  // Countdown de 5 segundos e depois mostra botão de confirmação
+  let count=5;
+  const timer=setInterval(()=>{
+    count--;
+    const cd=document.getElementById('countdown');
+    if(cd) cd.textContent=count;
+    if(count<=0){
+      clearInterval(timer);
+      const btn=document.getElementById('btn-confirmar');
+      if(btn) btn.style.display='block';
+      const cd2=document.getElementById('countdown');
+      if(cd2) cd2.parentElement.style.display='none';
+    }
+  },1000);
+}
+function confirmarManual(){
+  confirmarPag(numPagamento);
 }
 function confirmarPag(num){
   const nome=document.getElementById('inp-nome').value;
@@ -1010,7 +1051,52 @@ function confirmarPag(num){
 }
 
 // ===== CHAT =====
-function abrirChat(id){convActual=id;ir(10);}
+let chatPendente=''; // prestador que o cliente quer contactar
+
+function abrirChat(id){
+  if(!clienteLogado){
+    chatPendente=id;
+    ir(13); // vai para login do cliente
+    return;
+  }
+  convActual=id;
+  ir(10);
+}
+
+function loginCliente(){
+  const nome=document.getElementById('cl-nome').value.trim();
+  const tel=document.getElementById('cl-tel').value.trim();
+  const err=document.getElementById('cl-err');
+  if(!nome||!tel){err.style.display='block';return;}
+  err.style.display='none';
+  clienteLogado=true;
+  clienteNome=nome;
+  // Guardar em localStorage
+  localStorage.setItem('sjm-cliente',JSON.stringify({nome,tel,email:document.getElementById('cl-email').value}));
+  // Actualizar topbar
+  document.getElementById('tb-logo').title='Olá, '+nome;
+  // Ir para o chat com o prestador pendente
+  if(chatPendente){
+    convActual=chatPendente;
+    chatPendente='';
+    ir(10);
+  } else {
+    ir(10);
+  }
+}
+
+function carregarCliente(){
+  try{
+    const c=JSON.parse(localStorage.getItem('sjm-cliente')||'{}');
+    if(c.nome&&c.tel){
+      clienteLogado=true;
+      clienteNome=c.nome;
+      document.getElementById('cl-nome').value=c.nome;
+      document.getElementById('cl-tel').value=c.tel;
+      if(c.email) document.getElementById('cl-email').value=c.email;
+    }
+  }catch(e){}
+}
 function selConv(id,el){
   convActual=id;
   document.querySelectorAll('.conv-item').forEach(c=>c.classList.remove('on'));
@@ -1202,6 +1288,7 @@ actualizarSummary();
 renderCharts();
 renderChat('carlos');
 carregarCfg();
+carregarCliente();
 carregarTema();
 initDots();
 initSwipe();
