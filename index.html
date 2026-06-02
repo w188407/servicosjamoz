@@ -2,1159 +2,973 @@
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>Serviços Já Moz</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --green:#00A86B;--green-dark:#007A4D;--red:#CE1126;--gold:#F5A623;
-  --black:#0D0D0D;--card:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.08);
-  --white:#FFFFFF;--muted:rgba(255,255,255,0.45);--gray:#1C1C1E;
+  --g:#00A86B;--gd:#007A4D;--r:#CE1126;--go:#F5A623;
+  --bg:#0D0D0D;--card:rgba(255,255,255,0.05);--border:rgba(255,255,255,0.09);
+  --white:#fff;--muted:rgba(255,255,255,0.45);
 }
-/* TEMA CLARO */
-body.light{
-  background:#F5F5F5;color:#0D0D0D;
-}
-body.light nav{background:rgba(255,255,255,0.95);border-bottom:1px solid rgba(0,0,0,0.1);}
-body.light .logo{color:#0D0D0D;}
-body.light .nav-links a{color:rgba(0,0,0,0.5);}
-body.light .nav-links a:hover{color:#0D0D0D;}
-body.light .btn-outline{border-color:rgba(0,0,0,0.2);color:#0D0D0D;}
-body.light .notif-btn{border-color:rgba(0,0,0,0.2);color:#0D0D0D;}
-body.light .hero{background:transparent;}
-body.light .hero-bg{background:radial-gradient(ellipse 65% 55% at 50% 60%,rgba(0,168,107,.12) 0%,transparent 70%);}
-body.light .hero h1{color:#0D0D0D;}
-body.light .hero p{color:rgba(0,0,0,0.55);}
-body.light .stat-n{color:var(--green);}
-body.light .stat-l{color:rgba(0,0,0,0.4);}
-body.light .sbox{background:#fff;border-color:rgba(0,0,0,0.12);}
-body.light .sbox input{color:#0D0D0D;}
-body.light .sbox input::placeholder{color:rgba(0,0,0,0.3);}
-body.light .sloc{color:rgba(0,0,0,0.4);border-color:rgba(0,0,0,0.1);}
-body.light .tag{background:#fff;border-color:rgba(0,0,0,0.1);color:rgba(0,0,0,0.5);}
-body.light .tag:hover{border-color:var(--green);color:var(--green);}
-body.light .cat-card{background:#fff;border-color:rgba(0,0,0,0.08);}
-body.light .cn{color:#0D0D0D;}
-body.light .prov-card{background:#fff;border-color:rgba(0,0,0,0.08);}
-body.light .pname{color:#0D0D0D;}
-body.light .prole{color:rgba(0,0,0,0.45);}
-body.light .psk{color:rgba(0,0,0,0.4);}
-body.light .ptag{background:rgba(0,0,0,0.06);color:rgba(0,0,0,0.5);}
-body.light .pprice{color:rgba(0,0,0,0.5);}
-body.light .how-sec{background:#EBEBEB;border-color:rgba(0,0,0,0.08);}
-body.light .sdesc{color:rgba(0,0,0,0.5);}
-body.light .stit{color:#0D0D0D;}
-body.light .cta-sec h2{color:#0D0D0D;}
-body.light .cta-sec p{color:rgba(0,0,0,0.5);}
-body.light footer{border-color:rgba(0,0,0,0.08);}
-body.light .fcopy{color:rgba(0,0,0,0.3);}
-body.light .flinks a{color:rgba(0,0,0,0.4);}
-body.light .card{background:#fff;border-color:rgba(0,0,0,0.1);}
-body.light .card-title{color:#0D0D0D;}
-body.light .card-sub{color:rgba(0,0,0,0.5);}
-body.light .plan{border-color:rgba(0,0,0,0.12);}
-body.light .plan-name{color:#0D0D0D;}
-body.light .plan-feat{color:rgba(0,0,0,0.5);}
-body.light .fl{color:rgba(0,0,0,0.5);}
-body.light .fi{background:#F5F5F5;border-color:rgba(0,0,0,0.12);color:#0D0D0D;}
-body.light .summary{background:#F5F5F5;border-color:rgba(0,0,0,0.1);}
-body.light .sum-row{color:rgba(0,0,0,0.5);}
-body.light .sum-row.total{color:#0D0D0D;}
-body.light .btn-full-o{border-color:rgba(0,0,0,0.2);color:#0D0D0D;}
-body.light .chat-sidebar{border-color:rgba(0,0,0,0.1);}
-body.light .chat-sidebar-hdr{border-color:rgba(0,0,0,0.08);}
-body.light .chat-sidebar-title{color:#0D0D0D;}
-body.light .chat-search{background:#F5F5F5;border-color:rgba(0,0,0,0.1);color:#0D0D0D;}
-body.light .conv-item{border-color:rgba(0,0,0,0.04);}
-body.light .conv-item:hover,.conv-item.active{background:rgba(0,0,0,0.03);}
-body.light .conv-name{color:#0D0D0D;}
-body.light .conv-last{color:rgba(0,0,0,0.4);}
-body.light .conv-time{color:rgba(0,0,0,0.35);}
-body.light .chat-hdr{border-color:rgba(0,0,0,0.08);}
-body.light .chat-hdr-name{color:#0D0D0D;}
-body.light .msg.theirs .msg-bubble{background:rgba(0,0,0,0.07);color:#0D0D0D;}
-body.light .chat-input-area{border-color:rgba(0,0,0,0.08);}
-body.light .chat-input{background:#F5F5F5;border-color:rgba(0,0,0,0.1);color:#0D0D0D;}
-body.light .attach-btn{background:#F5F5F5;border-color:rgba(0,0,0,0.1);color:rgba(0,0,0,0.4);}
-body.light .admin-tabs{border-color:rgba(0,0,0,0.1);}
-body.light .atab{color:rgba(0,0,0,0.4);}
-body.light .atab:hover{color:#0D0D0D;}
-body.light .kpi{background:#fff;border-color:rgba(0,0,0,0.08);}
-body.light .kpi-lbl{color:rgba(0,0,0,0.5);}
-body.light .chart-wrap{background:#fff;border-color:rgba(0,0,0,0.08);}
-body.light .bar-lbl{color:rgba(0,0,0,0.4);}
-body.light .table-wrap{background:#fff;border-color:rgba(0,0,0,0.08);}
-body.light .t-row{color:#0D0D0D;border-color:rgba(0,0,0,0.04);}
-body.light .t-row.header{color:rgba(0,0,0,0.4);background:rgba(0,0,0,0.02);}
-body.light .prov-item{background:#fff;border-color:rgba(0,0,0,0.08);}
-body.light .prov-name{color:#0D0D0D;}
-body.light .prov-count{color:rgba(0,0,0,0.4);}
-body.light .prov-bar-bg{background:rgba(0,0,0,0.08);}
-body.light .acct-card{background:rgba(0,168,107,.06);}
-body.light .acct-val{color:#0D0D0D;}
-body.light .acct-sub{color:rgba(0,0,0,0.4);}
-body.light .notif-panel{background:#fff;}
-body.light .np-title{color:#0D0D0D;}
-body.light .ni-text{color:#0D0D0D;}
-body.light .receipt{background:#F5F5F5;border-color:rgba(0,0,0,0.1);}
-body.light .rec-row{border-color:rgba(0,0,0,0.06);}
-body.light .rl{color:rgba(0,0,0,0.5);}
-body.light .rv{color:#0D0D0D;}
-
-/* BOTÃO TEMA */
-.theme-btn{background:transparent;border:1px solid var(--border);color:var(--white);
-  width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px;
-  display:flex;align-items:center;justify-content:center;transition:all .2s;}
-.theme-btn:hover{border-color:var(--green);}
-body.light .theme-btn{border-color:rgba(0,0,0,0.2);color:#0D0D0D;}
-body.light .sec-title{color:#0D0D0D;}
-body.light .search-lbl{color:var(--green);}
-body.light .btn-big-gh{background:rgba(0,0,0,0.06);color:#0D0D0D;border-color:rgba(0,0,0,0.12);}
-body.light .hero-badge{background:rgba(0,168,107,.1);border-color:rgba(0,168,107,.25);}
-body.light #login-dono{background:#F5F5F5;}
-body.light .success-wrap .suc-title{color:#0D0D0D;}
-body.light .suc-sub{color:rgba(0,0,0,0.5);}
-body.light .success-icon{background:rgba(0,168,107,.1);}
-body.light .dash-card{background:#fff;border-color:rgba(0,0,0,0.08);}
-body.light .dash-lbl{color:rgba(0,0,0,0.5);}
-body.light .dash-val{color:#0D0D0D;}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'DM Sans',sans-serif;background:var(--black);color:var(--white);min-height:100vh;overflow-x:hidden;}
-.screen{display:none;min-height:100vh;}
-.screen.active{display:block;animation:fadeUp .35s ease both;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--white);
+  min-height:100vh;overflow-x:hidden;}
 
-/* NAV */
-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 36px;
-  position:fixed;top:0;left:0;right:0;z-index:300;
-  background:rgba(13,13,13,0.92);backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--border);}
-.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;cursor:pointer;}
-.logo span{color:var(--green);}
-.nav-links{display:flex;gap:26px;}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;cursor:pointer;transition:color .2s;}
-.nav-links a:hover,.nav-links a.active-link{color:#fff;}
-.nav-actions{display:flex;gap:9px;align-items:center;}
-.btn-sm{padding:8px 18px;border-radius:50px;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;transition:all .2s;}
-.btn-outline{background:transparent;border:1px solid var(--border);color:#fff;}
-.btn-outline:hover{border-color:var(--green);color:var(--green);}
-.btn-green-sm{background:var(--green);border:none;color:#fff;}
-.btn-green-sm:hover{background:var(--green-dark);}
-.notif-btn{position:relative;background:transparent;border:1px solid var(--border);
-  color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px;
+/* TOPBAR */
+.topbar{position:fixed;top:0;left:0;right:0;height:54px;z-index:999;
+  background:rgba(13,13,13,0.95);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;padding:0 16px;}
+.tb-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;cursor:pointer;}
+.tb-logo span{color:var(--g);}
+.tb-nav{display:flex;align-items:center;gap:8px;}
+.tb-arrow{width:38px;height:38px;border-radius:50%;
+  background:rgba(0,168,107,0.15);border:1px solid rgba(0,168,107,0.4);
+  color:var(--g);font-size:20px;cursor:pointer;
   display:flex;align-items:center;justify-content:center;transition:all .2s;}
-.notif-btn:hover{border-color:var(--green);}
-.notif-dot{position:absolute;top:4px;right:4px;width:8px;height:8px;
-  background:var(--red);border-radius:50%;border:2px solid var(--black);}
+.tb-arrow:hover{background:var(--g);color:#fff;}
+.tb-arrow:disabled{opacity:0.2;pointer-events:none;}
+.tb-label{font-size:12px;font-weight:500;color:var(--muted);min-width:72px;text-align:center;}
+.tb-theme{width:36px;height:36px;border-radius:50%;
+  background:transparent;border:1px solid var(--border);
+  color:#fff;font-size:15px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;}
 
-/* ===================== HOME ===================== */
-#home{padding-top:78px;}
-.hero{min-height:90vh;display:flex;flex-direction:column;align-items:center;
-  justify-content:center;text-align:center;padding:70px 36px 50px;position:relative;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;
-  background:radial-gradient(ellipse 65% 55% at 50% 60%,rgba(0,168,107,.17) 0%,transparent 70%),
-             radial-gradient(ellipse 40% 30% at 80% 15%,rgba(206,17,38,.07) 0%,transparent 60%);
-  pointer-events:none;}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;
-  background:rgba(0,168,107,.11);border:1px solid rgba(0,168,107,.28);
-  border-radius:50px;padding:6px 16px;font-size:13px;color:var(--green);margin-bottom:28px;}
+/* SLIDES */
+.slides-wrap{position:fixed;top:54px;left:0;right:0;bottom:32px;overflow:hidden;}
+.slides-track{display:flex;height:100%;transition:transform .35s cubic-bezier(.4,0,.2,1);}
+.slide{min-width:100vw;width:100vw;height:100%;overflow-y:auto;
+  overflow-x:hidden;-webkit-overflow-scrolling:touch;padding:16px 16px 20px;}
+.slide.center{display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;padding:20px;}
+
+/* DOTS */
+.dots{position:fixed;bottom:8px;left:50%;transform:translateX(-50%);
+  display:flex;gap:6px;z-index:999;}
+.dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.2);
+  cursor:pointer;transition:all .3s;}
+.dot.on{background:var(--g);width:20px;border-radius:4px;}
+
+/* HERO */
+.hero-badge{display:inline-flex;align-items:center;gap:6px;
+  background:rgba(0,168,107,.12);border:1px solid rgba(0,168,107,.28);
+  border-radius:50px;padding:5px 14px;font-size:12px;color:var(--g);margin-bottom:20px;}
 .hero h1{font-family:'Syne',sans-serif;font-weight:800;
-  font-size:clamp(44px,7vw,84px);line-height:1.0;letter-spacing:-2px;
-  max-width:840px;margin-bottom:20px;}
-.hero h1 .ac{color:var(--green);}.hero h1 .acr{color:var(--red);}
-.hero p{font-size:16px;color:var(--muted);max-width:460px;line-height:1.65;margin-bottom:38px;font-weight:300;}
-.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
-.btn-big{padding:14px 32px;border-radius:50px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;cursor:pointer;border:none;transition:all .25s;}
-.btn-big-g{background:var(--green);color:#fff;}.btn-big-g:hover{background:var(--green-dark);transform:translateY(-2px);}
-.btn-big-gh{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.12);}
-.btn-big-gh:hover{background:rgba(255,255,255,.1);transform:translateY(-2px);}
-.stats{display:flex;justify-content:center;gap:50px;margin-top:64px;flex-wrap:wrap;}
-.stat{text-align:center;}
-.stat-n{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;color:var(--green);}
-.stat-l{font-size:12px;color:rgba(255,255,255,.4);margin-top:3px;}
+  font-size:clamp(32px,8vw,64px);line-height:1.05;letter-spacing:-1px;margin-bottom:14px;}
+.hero h1 .ac{color:var(--g);}.hero h1 .ar{color:var(--r);}
+.hero p{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:24px;max-width:340px;}
+.hero-btns{display:flex;flex-direction:column;gap:10px;width:100%;max-width:300px;margin-bottom:28px;}
+.btn-g{padding:14px;border-radius:50px;background:var(--g);color:#fff;
+  border:none;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;
+  cursor:pointer;transition:all .2s;width:100%;}
+.btn-g:hover{background:var(--gd);}
+.btn-o{padding:14px;border-radius:50px;background:rgba(255,255,255,.07);
+  color:#fff;border:1px solid rgba(255,255,255,.13);
+  font-family:'DM Sans',sans-serif;font-size:14px;cursor:pointer;width:100%;}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;max-width:320px;}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;}
+.stat-n{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--g);}
+.stat-l{font-size:11px;color:var(--muted);margin-top:2px;}
 
-.search-wrap{padding:50px 36px;max-width:840px;margin:0 auto;}
-.search-lbl{font-family:'Syne',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:14px;}
-.sbox{display:flex;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:13px;overflow:hidden;transition:border-color .2s;}
-.sbox:focus-within{border-color:var(--green);}
-.sbox input{flex:1;background:transparent;border:none;outline:none;padding:16px 20px;color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;}
+/* SEARCH */
+.s-label{font-family:'Syne',sans-serif;font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--g);margin-bottom:10px;}
+.sbox{display:flex;background:rgba(255,255,255,.06);border:1px solid var(--border);
+  border-radius:12px;overflow:hidden;margin-bottom:12px;transition:border-color .2s;}
+.sbox:focus-within{border-color:var(--g);}
+.sbox input{flex:1;background:transparent;border:none;outline:none;
+  padding:13px 14px;color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;}
 .sbox input::placeholder{color:rgba(255,255,255,.25);}
-.sloc{display:flex;align-items:center;gap:6px;padding:0 16px;border-left:1px solid var(--border);color:var(--muted);font-size:13px;white-space:nowrap;}
-.sloc .dot{color:var(--green);}
-.sbtn{margin:8px;padding:10px 24px;background:var(--green);color:#fff;border:none;border-radius:9px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;}
-.sbtn:hover{background:var(--green-dark);}
-.stags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
-.tag{padding:6px 14px;border-radius:50px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);font-size:12px;color:var(--muted);cursor:pointer;transition:all .2s;}
-.tag:hover{border-color:var(--green);color:var(--green);}
+.sbtn{padding:10px 18px;background:var(--g);color:#fff;border:none;
+  font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;margin:8px;}
+.sbtn:hover{background:var(--gd);}
+.stags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px;}
+.stag{padding:5px 12px;border-radius:50px;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);font-size:12px;color:var(--muted);
+  cursor:pointer;transition:all .2s;}
+.stag:hover,.stag:active{border-color:var(--g);color:var(--g);}
+.res-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;
+  margin-bottom:12px;color:var(--g);}
 
-.sec{padding:50px 36px;max-width:1060px;margin:0 auto;}
-.sec-hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:32px;}
-.sec-title{font-family:'Syne',sans-serif;font-size:28px;font-weight:700;letter-spacing:-.5px;}
-.see-all{color:var(--green);font-size:13px;cursor:pointer;}
+/* CATEGORIAS */
+.sec-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+.sec-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;}
+.cat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:14px 8px;text-align:center;cursor:pointer;transition:all .2s;}
+.cat-card:active{background:rgba(0,168,107,.12);border-color:rgba(0,168,107,.35);}
+.ci{font-size:24px;margin-bottom:6px;}
+.cn{font-size:11px;font-weight:500;}
+.cc{font-size:10px;color:rgba(255,255,255,.3);margin-top:2px;}
 
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;}
-.cat-card{background:var(--card);border:1px solid var(--border);border-radius:13px;padding:20px 12px;text-align:center;cursor:pointer;transition:all .25s;}
-.cat-card:hover{background:rgba(0,168,107,.1);border-color:rgba(0,168,107,.3);transform:translateY(-3px);}
-.ci{font-size:28px;margin-bottom:8px;}.cn{font-size:12px;font-weight:500;}.cc{font-size:10px;color:rgba(255,255,255,.3);margin-top:2px;}
+/* PRESTADORES */
+.prov-card{background:var(--card);border:1px solid var(--border);
+  border-radius:14px;padding:16px;margin-bottom:12px;}
+.ph{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;}
+.av{width:44px;height:44px;border-radius:11px;font-size:20px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.av1{background:rgba(0,122,255,.15);}.av2{background:rgba(245,166,35,.15);}
+.av3{background:rgba(206,17,38,.12);}.av4{background:rgba(175,82,222,.15);}
+.pname{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:2px;}
+.prole{font-size:11px;color:var(--muted);}
+.pbadge{margin-left:auto;background:rgba(0,168,107,.1);border:1px solid rgba(0,168,107,.22);
+  border-radius:50px;padding:2px 8px;font-size:10px;color:var(--g);white-space:nowrap;}
+.pstats{display:flex;gap:12px;margin-bottom:10px;font-size:12px;}
+.psv{font-weight:600;}.psk{color:var(--muted);margin-left:2px;}
+.ptags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;}
+.ptag{padding:3px 9px;border-radius:50px;background:rgba(255,255,255,.06);font-size:10px;color:var(--muted);}
+.pprice{font-size:12px;color:var(--muted);margin-bottom:10px;}
+.pprice strong{color:var(--g);font-size:15px;font-family:'Syne',sans-serif;}
+.contact-btns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;}
+.cbtn{padding:9px 4px;border-radius:8px;border:none;font-size:11px;font-weight:500;
+  font-family:'DM Sans',sans-serif;cursor:pointer;transition:all .2s;width:100%;}
+.cbtn-chat{background:var(--g);color:#fff;}
+.cbtn-call{background:rgba(0,122,255,0.85);color:#fff;}
+.cbtn-wa{background:rgba(37,211,102,0.85);color:#fff;}
 
-.prov-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
-.prov-card{background:var(--card);border:1px solid var(--border);border-radius:17px;padding:20px;cursor:pointer;transition:all .25s;position:relative;overflow:hidden;}
-.prov-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);transform:scaleX(0);transition:transform .25s;transform-origin:left;}
-.prov-card:hover{border-color:rgba(0,168,107,.25);transform:translateY(-3px);}
-.prov-card:hover::before{transform:scaleX(1);}
-.ph{display:flex;gap:12px;align-items:flex-start;margin-bottom:13px;}
-.av{width:48px;height:48px;border-radius:12px;font-size:21px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.av1{background:rgba(0,122,255,.15);}.av2{background:rgba(245,166,35,.15);}.av3{background:rgba(206,17,38,.12);}.av4{background:rgba(175,82,222,.15);}
-.pname{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:2px;}
-.prole{font-size:12px;color:var(--muted);}
-.pbadge{margin-left:auto;background:rgba(0,168,107,.1);border:1px solid rgba(0,168,107,.22);border-radius:50px;padding:3px 9px;font-size:10px;color:var(--green);white-space:nowrap;}
-.pstats{display:flex;gap:14px;margin-bottom:12px;}
-.ps{font-size:12px;}.psv{font-weight:600;}.psk{color:var(--muted);margin-left:2px;}
-.ptags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;}
-.ptag{padding:3px 10px;border-radius:50px;background:rgba(255,255,255,.06);font-size:11px;color:var(--muted);}
-.pfooter{display:flex;justify-content:space-between;align-items:center;}
-.pprice{font-size:12px;color:var(--muted);}
-.pprice strong{color:var(--green);font-size:16px;font-family:'Syne',sans-serif;}
-.btn-contact{padding:8px 16px;background:var(--green);color:#fff;border:none;border-radius:50px;font-size:12px;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;}
-.btn-contact:hover{background:var(--green-dark);}
+/* COMO FUNCIONA */
+.step-card{display:flex;gap:14px;align-items:flex-start;
+  background:var(--card);border:1px solid var(--border);border-radius:13px;
+  padding:16px;margin-bottom:12px;}
+.step-num{width:40px;height:40px;border-radius:11px;background:var(--g);
+  color:#fff;font-family:'Syne',sans-serif;font-size:18px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.step-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:4px;}
+.step-desc{font-size:12px;color:var(--muted);line-height:1.6;}
+.cta-box{background:rgba(0,168,107,.08);border:1px solid rgba(0,168,107,.2);
+  border-radius:14px;padding:20px;text-align:center;margin-top:4px;}
+.cta-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;margin-bottom:8px;}
+.cta-sub{font-size:13px;color:var(--muted);margin-bottom:16px;}
+.footer-copy{text-align:center;font-size:11px;color:rgba(255,255,255,.2);
+  margin-top:16px;cursor:pointer;padding:8px;}
 
-.how-sec{padding:50px 36px;background:rgba(255,255,255,.02);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-.how-inner{max-width:1060px;margin:0 auto;}
-.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:40px;}
-.step3{text-align:center;position:relative;}
-.step3:not(:last-child)::after{content:'→';position:absolute;right:-18px;top:20px;color:rgba(255,255,255,.15);font-size:20px;}
-.snum{width:48px;height:48px;border-radius:13px;background:var(--green);color:#fff;font-family:'Syne',sans-serif;font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
-.stit{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:7px;}
-.sdesc{font-size:13px;color:var(--muted);line-height:1.6;}
-.cta-sec{padding:80px 36px;text-align:center;max-width:620px;margin:0 auto;}
-.cta-sec h2{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-1px;margin-bottom:16px;line-height:1.1;}
-.cta-sec p{font-size:14px;color:var(--muted);margin-bottom:32px;}
-footer{border-top:1px solid var(--border);padding:32px 36px;display:flex;justify-content:space-between;align-items:center;max-width:1060px;margin:0 auto;flex-wrap:wrap;gap:12px;}
-footer .logo{font-size:16px;}.flinks{display:flex;gap:20px;}.flinks a{color:rgba(255,255,255,.3);text-decoration:none;font-size:13px;}.fcopy{font-size:12px;color:rgba(255,255,255,.18);}
-
-/* ===================== REGISTO / PAGAMENTO ===================== */
-#registo,#dados,#pagamento,#processando,#sucesso{padding:96px 18px 56px;}
-.container{max-width:520px;margin:0 auto;}
-
-.steps-bar{display:flex;align-items:center;margin-bottom:32px;}
-.si{display:flex;align-items:center;gap:8px;}
-.sc{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0;border:2px solid var(--border);color:var(--muted);transition:all .3s;}
-.sc.done{background:var(--green);border-color:var(--green);color:#fff;}
-.sc.active{border-color:var(--green);color:var(--green);}
-.sl{flex:1;height:3px;background:var(--border);margin:0 5px;transition:background .3s;}
-.sl.done{background:var(--green);}
-.slabel{font-size:12px;color:var(--muted);white-space:nowrap;font-weight:500;}
+/* REGISTO */
+.steps-bar{display:flex;align-items:center;margin-bottom:20px;}
+.si{display:flex;align-items:center;gap:6px;}
+.sc{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;
+  border:2px solid var(--border);color:var(--muted);transition:all .3s;}
+.sc.done{background:var(--g);border-color:var(--g);color:#fff;}
+.sc.active{border-color:var(--g);color:var(--g);}
+.sl{flex:1;height:2px;background:var(--border);margin:0 4px;transition:background .3s;}
+.sl.done{background:var(--g);}
+.slabel{font-size:10px;color:var(--muted);white-space:nowrap;}
 .slabel.active{color:#fff;}
-
-.card{background:var(--card);border:1px solid var(--border);border-radius:17px;padding:26px;margin-bottom:16px;}
-.card-title{font-family:'Syne',sans-serif;font-size:21px;font-weight:700;margin-bottom:6px;}
-.card-sub{font-size:13px;color:var(--muted);margin-bottom:22px;line-height:1.6;}
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:22px;}
-.plan{border:2px solid var(--border);border-radius:13px;padding:16px 12px;cursor:pointer;transition:all .2s;text-align:center;position:relative;}
-.plan:hover{border-color:rgba(0,168,107,.4);}
-.plan.selected{border-color:var(--green);background:rgba(0,168,107,.08);}
-.plan-badge{position:absolute;top:-9px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;font-size:9px;font-weight:600;padding:2px 9px;border-radius:50px;white-space:nowrap;}
-.plan-name{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;margin-bottom:6px;}
-.plan-price{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--green);}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:14px;}
+.card-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:5px;}
+.card-sub{font-size:13px;color:var(--muted);margin-bottom:18px;line-height:1.6;}
+.plans{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;}
+.plan{border:2px solid var(--border);border-radius:12px;padding:14px 16px;
+  cursor:pointer;transition:all .2s;display:flex;justify-content:space-between;align-items:center;position:relative;}
+.plan.selected{border-color:var(--g);background:rgba(0,168,107,.08);}
+.plan-badge{position:absolute;top:-9px;right:12px;background:var(--g);color:#fff;
+  font-size:9px;font-weight:700;padding:2px 9px;border-radius:50px;}
+.plan-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;}
+.plan-feats{font-size:11px;color:var(--muted);margin-top:3px;}
+.plan-price{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--g);text-align:right;}
 .plan-period{font-size:10px;color:var(--muted);}
-.plan-features{margin-top:10px;text-align:left;}
-.plan-feat{font-size:10px;color:var(--muted);padding:2px 0;}
-.plan-feat::before{content:'✓ ';color:var(--green);}
-.fg{margin-bottom:14px;}
+.fg{margin-bottom:13px;}
 .fl{font-size:12px;color:var(--muted);margin-bottom:6px;display:block;}
-.fi{width:100%;padding:12px 14px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;outline:none;transition:border-color .2s;}
-.fi:focus{border-color:var(--green);}
+.fi{width:100%;padding:12px 13px;background:rgba(255,255,255,.05);
+  border:1px solid var(--border);border-radius:10px;color:#fff;
+  font-family:'DM Sans',sans-serif;font-size:14px;outline:none;transition:border-color .2s;}
+.fi:focus{border-color:var(--g);}
 .fi::placeholder{color:rgba(255,255,255,.2);}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.pmethods{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:18px;}
-.pm{border:2px solid var(--border);border-radius:12px;padding:13px 9px;text-align:center;cursor:pointer;transition:all .2s;}
-.pm:hover{border-color:rgba(0,168,107,.4);}
-.pm.selected{border-color:var(--green);background:rgba(0,168,107,.08);}
-.pm-icon{font-size:24px;margin-bottom:4px;}.pm-name{font-size:11px;font-weight:600;}.pm-desc{font-size:10px;color:var(--muted);}
-.pbox{background:rgba(0,168,107,.06);border:1px solid rgba(0,168,107,.2);border-radius:12px;padding:16px;margin-bottom:16px;}
-.pbox-title{font-size:13px;font-weight:600;color:var(--green);margin-bottom:10px;}
-.summary{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:18px;}
-.sum-row{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;color:var(--muted);}
-.sum-row.total{font-size:15px;font-weight:700;color:#fff;border-top:1px solid var(--border);margin-top:8px;padding-top:12px;}
-.sum-row.total span:last-child{color:var(--green);}
-.btn-full{width:100%;padding:14px;border-radius:10px;border:none;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s;margin-bottom:8px;}
-.btn-full-g{background:var(--green);color:#fff;}.btn-full-g:hover{background:var(--green-dark);}
-.btn-full-o{background:transparent;border:1px solid var(--border);color:#fff;}.btn-full-o:hover{border-color:var(--green);color:var(--green);}
-.processing{text-align:center;padding:32px 14px;}
-.spinner{width:52px;height:52px;border:4px solid rgba(0,168,107,.2);border-top-color:var(--green);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 20px;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.btn-full{width:100%;padding:14px;border-radius:10px;border:none;
+  font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;
+  cursor:pointer;transition:all .2s;margin-bottom:8px;}
+.btn-full-g{background:var(--g);color:#fff;}.btn-full-g:hover{background:var(--gd);}
+.btn-full-o{background:transparent;border:1px solid var(--border);color:#fff;}
+.btn-full-o:hover{border-color:var(--g);color:var(--g);}
+.pmethods{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px;}
+.pm{border:2px solid var(--border);border-radius:11px;padding:12px 8px;
+  text-align:center;cursor:pointer;transition:all .2s;}
+.pm.selected{border-color:var(--g);background:rgba(0,168,107,.08);}
+.pm-icon{font-size:22px;margin-bottom:4px;}.pm-name{font-size:11px;font-weight:600;}.pm-desc{font-size:9px;color:var(--muted);}
+.pbox{background:rgba(0,168,107,.06);border:1px solid rgba(0,168,107,.2);
+  border-radius:11px;padding:14px;margin-bottom:14px;}
+.pbox-title{font-size:12px;font-weight:600;color:var(--g);margin-bottom:10px;}
+.summary{background:rgba(255,255,255,.03);border:1px solid var(--border);
+  border-radius:11px;padding:14px;margin-bottom:14px;}
+.sum-row{display:flex;justify-content:space-between;font-size:13px;padding:4px 0;color:var(--muted);}
+.sum-row.total{font-size:15px;font-weight:700;color:#fff;
+  border-top:1px solid var(--border);margin-top:8px;padding-top:11px;}
+.sum-row.total span:last-child{color:var(--g);}
+.processing{text-align:center;padding:40px 16px;}
+.spinner{width:50px;height:50px;border:4px solid rgba(0,168,107,.2);
+  border-top-color:var(--g);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 18px;}
 @keyframes spin{to{transform:rotate(360deg)}}
 .phone-pulse{font-size:44px;margin-bottom:12px;animation:pulse 1.5s ease-in-out infinite;}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
-.success-wrap{text-align:center;padding:26px 10px;}
-.success-icon{width:72px;height:72px;background:rgba(0,168,107,.14);border:3px solid var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;margin:0 auto 20px;animation:pop .5s cubic-bezier(.36,.07,.19,.97) both;}
+.success-icon{width:68px;height:68px;background:rgba(0,168,107,.14);
+  border:3px solid var(--g);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:28px;
+  margin:0 auto 18px;animation:pop .5s cubic-bezier(.36,.07,.19,.97) both;}
 @keyframes pop{0%{transform:scale(0)}70%{transform:scale(1.1)}100%{transform:scale(1)}}
-.suc-title{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;margin-bottom:8px;}
-.suc-sub{font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.7;}
-.receipt{background:var(--card);border:1px solid var(--border);border-radius:13px;padding:20px;text-align:left;margin-bottom:20px;}
-.rec-title{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:12px;}
-.rec-row{display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05);}
+.receipt{background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:18px;text-align:left;margin-bottom:16px;}
+.rec-title{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--g);margin-bottom:12px;}
+.rec-row{display:flex;justify-content:space-between;font-size:12px;
+  padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05);}
 .rec-row:last-child{border:none;}
-.rec-row .rl{color:var(--muted);}.rec-row .rv{font-weight:500;}.rec-row .rv.g{color:var(--green);}
+.rl{color:var(--muted);}.rv{font-weight:500;}.rv.gr{color:var(--g);}
 
-/* ===================== CHAT ===================== */
-#chat{padding-top:78px;display:none;height:100vh;flex-direction:column;}
-#chat.active{display:flex;}
-.chat-layout{display:flex;flex:1;overflow:hidden;height:calc(100vh - 78px);}
-
-/* Sidebar conversas */
-.chat-sidebar{width:300px;border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0;}
-.chat-sidebar-hdr{padding:18px 16px;border-bottom:1px solid var(--border);}
-.chat-sidebar-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:10px;}
-.chat-search{width:100%;padding:9px 14px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:9px;color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;}
-.chat-search::placeholder{color:rgba(255,255,255,.25);}
-.chat-search:focus{border-color:var(--green);}
-.conv-list{flex:1;overflow-y:auto;}
-.conv-item{display:flex;gap:11px;align-items:center;padding:13px 16px;cursor:pointer;transition:background .2s;border-bottom:1px solid rgba(255,255,255,.04);}
-.conv-item:hover,.conv-item.active{background:rgba(255,255,255,.04);}
-.conv-item.active{border-left:3px solid var(--green);}
-.conv-av{width:40px;height:40px;border-radius:11px;font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.conv-info{flex:1;min-width:0;}
+/* CHAT */
+.chat-wrap{display:flex;flex-direction:column;height:100%;}
+.conv-list{margin-bottom:12px;}
+.conv-item{display:flex;gap:10px;align-items:center;padding:11px 12px;
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  margin-bottom:8px;cursor:pointer;transition:all .2s;}
+.conv-item.on{border-color:var(--g);background:rgba(0,168,107,.08);}
+.conv-av{width:38px;height:38px;border-radius:10px;font-size:17px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .conv-name{font-size:13px;font-weight:600;margin-bottom:2px;}
-.conv-last{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.conv-meta{display:flex;flex-direction:column;align-items:flex-end;gap:4px;}
-.conv-time{font-size:10px;color:var(--muted);}
-.conv-unread{background:var(--green);color:#fff;font-size:10px;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
-
-/* Chat main */
-.chat-main{flex:1;display:flex;flex-direction:column;min-width:0;}
-.chat-hdr{display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--border);flex-shrink:0;}
-.chat-hdr-av{width:38px;height:38px;border-radius:10px;font-size:17px;display:flex;align-items:center;justify-content:center;}
-.chat-hdr-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;}
-.chat-hdr-status{font-size:11px;color:var(--green);}
-.chat-hdr-actions{margin-left:auto;display:flex;gap:8px;}
-.chat-action-btn{background:rgba(255,255,255,.05);border:1px solid var(--border);color:#fff;padding:7px 14px;border-radius:50px;font-size:12px;cursor:pointer;transition:all .2s;}
-.chat-action-btn:hover{border-color:var(--green);color:var(--green);}
-
-.chat-messages{flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:12px;}
-.msg{display:flex;flex-direction:column;max-width:72%;}
+.conv-last{font-size:11px;color:var(--muted);}
+.conv-unread{margin-left:auto;background:var(--g);color:#fff;
+  font-size:10px;font-weight:700;width:18px;height:18px;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.chat-box{background:var(--card);border:1px solid var(--border);
+  border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px;
+  min-height:200px;max-height:300px;overflow-y:auto;margin-bottom:10px;}
+.msg{display:flex;flex-direction:column;max-width:78%;}
 .msg.mine{align-self:flex-end;align-items:flex-end;}
-.msg.theirs{align-self:flex-start;align-items:flex-start;}
-.msg-bubble{padding:10px 14px;border-radius:14px;font-size:14px;line-height:1.5;}
-.msg.mine .msg-bubble{background:var(--green);color:#fff;border-bottom-right-radius:4px;}
-.msg.theirs .msg-bubble{background:rgba(255,255,255,.08);color:#fff;border-bottom-left-radius:4px;}
-.msg-time{font-size:10px;color:var(--muted);margin-top:3px;}
-.msg-status{font-size:10px;color:rgba(255,255,255,.5);}
+.msg.theirs{align-self:flex-start;}
+.msg-bubble{padding:9px 12px;border-radius:12px;font-size:13px;line-height:1.5;}
+.msg.mine .msg-bubble{background:var(--g);color:#fff;border-bottom-right-radius:3px;}
+.msg.theirs .msg-bubble{background:rgba(255,255,255,.09);border-bottom-left-radius:3px;}
+.msg-time{font-size:10px;color:var(--muted);margin-top:2px;}
+.chat-hdr{display:flex;align-items:center;gap:10px;margin-bottom:12px;
+  padding-bottom:12px;border-bottom:1px solid var(--border);}
+.chat-inp-area{display:flex;gap:8px;align-items:flex-end;}
+.chat-inp{flex:1;background:rgba(255,255,255,.05);border:1px solid var(--border);
+  border-radius:10px;color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;
+  padding:10px 13px;outline:none;resize:none;}
+.chat-inp:focus{border-color:var(--g);}
+.send-btn{width:40px;height:40px;background:var(--g);border:none;border-radius:10px;
+  color:#fff;font-size:16px;cursor:pointer;flex-shrink:0;}
 
-.chat-input-area{padding:14px 20px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-end;flex-shrink:0;}
-.chat-input{flex:1;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;padding:11px 16px;outline:none;resize:none;max-height:100px;transition:border-color .2s;}
-.chat-input:focus{border-color:var(--green);}
-.chat-input::placeholder{color:rgba(255,255,255,.25);}
-.send-btn{width:42px;height:42px;background:var(--green);border:none;border-radius:11px;color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0;}
-.send-btn:hover{background:var(--green-dark);}
-.attach-btn{width:38px;height:38px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;}
-.attach-btn:hover{border-color:var(--green);color:var(--green);}
+/* ADMIN */
+.admin-tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:16px;gap:0;overflow-x:auto;}
+.atab{padding:10px 14px;font-size:12px;font-weight:500;cursor:pointer;
+  color:var(--muted);border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap;}
+.atab.on{color:var(--g);border-bottom-color:var(--g);}
+.tab-content{display:none;}.tab-content.on{display:block;}
+.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+.kpi{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;}
+.kpi-lbl{font-size:11px;color:var(--muted);margin-bottom:5px;}
+.kpi-val{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;}
+.kpi-val.g{color:var(--g);}.kpi-val.gold{color:var(--go);}
+.chart-wrap{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;}
+.chart-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:12px;}
+.chart-bars{display:flex;align-items:flex-end;gap:5px;height:80px;}
+.bar-col{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;}
+.bar{width:100%;background:var(--g);border-radius:3px 3px 0 0;opacity:.8;}
+.bar-lbl{font-size:8px;color:var(--muted);}
+.bar-val{font-size:8px;color:var(--g);font-weight:600;}
+.t-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;align-items:center;
+  padding:11px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:12px;}
+.t-row.hdr{font-size:10px;color:var(--muted);font-weight:600;text-transform:uppercase;}
+.badge-plan{padding:2px 8px;border-radius:50px;font-size:10px;font-weight:600;}
+.bp-b{background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);}
+.bp-p{background:rgba(0,168,107,.12);color:var(--g);}
+.bp-pr{background:rgba(245,166,35,.12);color:var(--go);}
+.badge-s{padding:2px 8px;border-radius:50px;font-size:10px;}
+.bs-a{background:rgba(0,168,107,.12);color:var(--g);}
+.acct-card{background:rgba(0,168,107,.06);border:1px solid rgba(0,168,107,.2);border-radius:12px;padding:14px;margin-bottom:10px;}
+.acct-card.gold{background:rgba(245,166,35,.06);border-color:rgba(245,166,35,.2);}
+.acct-lbl{font-size:11px;font-weight:600;color:var(--g);margin-bottom:6px;}
+.acct-card.gold .acct-lbl{color:var(--go);}
+.acct-val{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;}
+.acct-sub{font-size:10px;color:var(--muted);margin-top:2px;}
+.earn-note{background:rgba(0,168,107,.07);border:1px solid rgba(0,168,107,.2);
+  border-radius:11px;padding:13px;font-size:12px;line-height:1.6;
+  color:rgba(255,255,255,.7);margin-bottom:12px;}
+.earn-note strong{color:var(--g);}
+.lev-msg{display:none;border-radius:9px;padding:12px;font-size:12px;
+  margin-bottom:12px;text-align:center;line-height:1.6;}
 
-/* Chat empty state */
-.chat-empty{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--muted);text-align:center;padding:40px;}
-.chat-empty-icon{font-size:48px;margin-bottom:16px;opacity:.5;}
-.chat-empty-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:8px;color:rgba(255,255,255,.6);}
+/* LOGIN DONO */
+.login-box{max-width:360px;margin:0 auto;width:100%;}
+.login-icon{font-size:44px;margin-bottom:14px;}
+.login-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;margin-bottom:6px;}
+.login-sub{font-size:13px;color:var(--muted);margin-bottom:22px;}
+.login-err{display:none;background:rgba(206,17,38,.1);border:1px solid rgba(206,17,38,.3);
+  border-radius:9px;padding:11px;font-size:12px;color:#ff6b6b;margin-bottom:12px;text-align:center;}
+.login-hint{font-size:11px;color:var(--muted);text-align:center;margin-top:14px;line-height:1.7;}
 
-/* Typing indicator */
-.typing{display:flex;gap:4px;align-items:center;padding:10px 14px;background:rgba(255,255,255,.08);border-radius:14px;border-bottom-left-radius:4px;width:fit-content;}
-.typing span{width:7px;height:7px;background:var(--muted);border-radius:50%;animation:blink 1.4s ease-in-out infinite;}
-.typing span:nth-child(2){animation-delay:.2s;}
-.typing span:nth-child(3){animation-delay:.4s;}
-@keyframes blink{0%,80%,100%{transform:scale(0.8);opacity:.5}40%{transform:scale(1.1);opacity:1}}
-
-/* ===================== ADMIN ===================== */
-#admin{padding:96px 18px 56px;display:none;}
-#admin.active{display:block;}
-.container-wide{max-width:900px;margin:0 auto;}
-
-/* Tabs */
-.admin-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:28px;}
-.atab{padding:11px 20px;font-size:13px;font-weight:500;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;transition:all .2s;margin-bottom:-1px;}
-.atab:hover{color:#fff;}
-.atab.active{color:var(--green);border-bottom-color:var(--green);}
-
-.tab-content{display:none;}.tab-content.active{display:block;animation:fadeUp .3s ease;}
-
-/* KPI cards */
-.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;}
-.kpi{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;}
-.kpi-lbl{font-size:11px;color:var(--muted);margin-bottom:6px;}
-.kpi-val{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;}
-.kpi-val.g{color:var(--green);}.kpi-val.gold{color:var(--gold);}.kpi-val.red{color:var(--red);}
-.kpi-change{font-size:11px;margin-top:4px;}
-.kpi-change.up{color:var(--green);}.kpi-change.down{color:var(--red);}
-
-/* Chart bars */
-.chart-wrap{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:16px;}
-.chart-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:16px;}
-.chart-bars{display:flex;align-items:flex-end;gap:6px;height:100px;}
-.bar-col{display:flex;flex-direction:column;align-items:center;gap:5px;flex:1;}
-.bar{width:100%;background:var(--green);border-radius:4px 4px 0 0;transition:height .5s ease;opacity:.8;}
-.bar:hover{opacity:1;}
-.bar-lbl{font-size:9px;color:var(--muted);}
-.bar-val{font-size:9px;color:var(--green);font-weight:600;}
-
-/* Table */
-.table-wrap{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:16px;}
-.table-hdr{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border-bottom:1px solid var(--border);}
-.table-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;}
-.table-filter{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:8px;color:#fff;font-size:12px;padding:5px 10px;outline:none;cursor:pointer;}
-.t-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:12px;align-items:center;padding:13px 18px;border-bottom:1px solid rgba(255,255,255,.04);font-size:13px;transition:background .15s;}
-.t-row:hover{background:rgba(255,255,255,.02);}
-.t-row.header{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;background:rgba(255,255,255,.02);}
-.t-row:last-child{border:none;}
-.badge-plan{padding:3px 9px;border-radius:50px;font-size:11px;font-weight:600;}
-.bp-basico{background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);}
-.bp-pro{background:rgba(0,168,107,.12);color:var(--green);}
-.bp-premium{background:rgba(245,166,35,.12);color:var(--gold);}
-.badge-status{padding:3px 9px;border-radius:50px;font-size:11px;}
-.bs-ativo{background:rgba(0,168,107,.12);color:var(--green);}
-.bs-pendente{background:rgba(245,166,35,.12);color:var(--gold);}
-
-/* Province map */
-.prov-grid-admin{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-bottom:16px;}
-.prov-item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;}
-.prov-name{font-size:13px;font-weight:600;margin-bottom:6px;}
-.prov-bar-bg{height:5px;background:rgba(255,255,255,.08);border-radius:3px;margin-bottom:6px;}
-.prov-bar-fill{height:5px;background:var(--green);border-radius:3px;}
+/* CONFIG */
+.cfg-section{margin-bottom:16px;}
+.cfg-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;
+  margin-bottom:12px;color:var(--g);}
+.cfg-success{display:none;background:rgba(0,168,107,.1);border:1px solid rgba(0,168,107,.3);
+  border-radius:9px;padding:12px;font-size:13px;color:var(--g);
+  margin-bottom:12px;text-align:center;}
+.prov-item{background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:12px;margin-bottom:8px;}
+.prov-name{font-size:13px;font-weight:600;margin-bottom:5px;}
+.prov-bar-bg{height:4px;background:rgba(255,255,255,.08);border-radius:2px;margin-bottom:5px;}
+.prov-bar-fill{height:4px;background:var(--g);border-radius:2px;}
 .prov-count{font-size:11px;color:var(--muted);}
 
-/* Account */
-.acct-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
-.acct-card{background:rgba(0,168,107,.06);border:1px solid rgba(0,168,107,.2);border-radius:13px;padding:16px;}
-.acct-card.gold-c{background:rgba(245,166,35,.06);border-color:rgba(245,166,35,.2);}
-.acct-lbl{font-size:12px;font-weight:600;color:var(--green);margin-bottom:7px;}
-.acct-card.gold-c .acct-lbl{color:var(--gold);}
-.acct-val{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;}
-.acct-sub{font-size:11px;color:var(--muted);margin-top:3px;}
-.earn-note{background:rgba(0,168,107,.07);border:1px solid rgba(0,168,107,.2);border-radius:12px;padding:14px;font-size:13px;line-height:1.6;color:rgba(255,255,255,.7);margin-bottom:16px;}
-.earn-note strong{color:var(--green);}
-
-/* Notification panel */
-.notif-panel{position:fixed;top:70px;right:20px;width:300px;background:#1C1C1E;border:1px solid var(--border);border-radius:16px;z-index:400;box-shadow:0 20px 60px rgba(0,0,0,.6);display:none;}
-.notif-panel.open{display:block;animation:fadeUp .25s ease;}
-.np-hdr{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid var(--border);}
-.np-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;}
-.np-close{background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;}
-.notif-item{display:flex;gap:10px;padding:13px 16px;border-bottom:1px solid rgba(255,255,255,.04);cursor:pointer;transition:background .15s;}
-.notif-item:hover{background:rgba(255,255,255,.03);}
-.notif-item:last-child{border:none;}
-.ni-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
-.ni-g{background:rgba(0,168,107,.15);}.ni-b{background:rgba(0,122,255,.15);}.ni-y{background:rgba(245,166,35,.15);}
-.ni-text{font-size:12px;line-height:1.5;}
-.ni-time{font-size:10px;color:var(--muted);margin-top:2px;}
-
-@media(max-width:700px){
-  nav{padding:12px 16px;}.nav-links{display:none;}
-  .hero{padding:70px 16px 44px;}.stats{gap:24px;}
-  .sec{padding:40px 16px;}.search-wrap{padding:40px 16px;}
-  .how-sec{padding:40px 16px;}.steps3{grid-template-columns:1fr;gap:24px;}
-  .step3:not(:last-child)::after{display:none;}
-  .cta-sec{padding:60px 16px;}
-  footer{flex-direction:column;text-align:center;}
-  .plans{grid-template-columns:1fr;}
-  .pmethods{grid-template-columns:1fr 1fr;}
-  .frow{grid-template-columns:1fr;}
-  .card{padding:18px 14px;}
-  #registo,#dados,#pagamento,#processando,#sucesso{padding:88px 14px 50px;}
-  .chat-sidebar{width:260px;}
-  .kpi-grid{grid-template-columns:1fr 1fr;}
-  .acct-grid{grid-template-columns:1fr;}
-  .t-row{grid-template-columns:2fr 1fr 1fr;}
-  .t-row > *:nth-child(4),.t-row > *:nth-child(5){display:none;}
-}
+/* TEMA CLARO */
+body.light{background:#F4F4F4;color:#0D0D0D;}
+body.light .topbar{background:rgba(255,255,255,.97);border-color:rgba(0,0,0,.1);}
+body.light .tb-logo{color:#0D0D0D;}
+body.light .tb-label{color:rgba(0,0,0,.5);}
+body.light .tb-theme{border-color:rgba(0,0,0,.2);color:#0D0D0D;}
+body.light .card,body.light .prov-card,body.light .conv-item,
+body.light .kpi,body.light .chart-wrap,body.light .receipt{
+  background:#fff;border-color:rgba(0,0,0,.1);}
+body.light .fi{background:#f0f0f0;border-color:rgba(0,0,0,.12);color:#0D0D0D;}
+body.light .sbox{background:#fff;border-color:rgba(0,0,0,.12);}
+body.light .sbox input{color:#0D0D0D;}
+body.light .summary{background:#f0f0f0;border-color:rgba(0,0,0,.1);}
+body.light .sum-row{color:rgba(0,0,0,.5);}
+body.light .sum-row.total{color:#0D0D0D;}
+body.light .plan{border-color:rgba(0,0,0,.12);}
+body.light .hero h1,body.light .sec-title,body.light .card-title,
+body.light .pname,body.light .conv-name{color:#0D0D0D;}
+body.light .hero p,body.light .card-sub,body.light .prole,
+body.light .psk,body.light .pprice,body.light .muted{color:rgba(0,0,0,.5);}
+body.light .cat-card{background:#fff;border-color:rgba(0,0,0,.08);}
+body.light .chat-box{background:#fff;border-color:rgba(0,0,0,.1);}
+body.light .msg.theirs .msg-bubble{background:rgba(0,0,0,.07);color:#0D0D0D;}
+body.light .chat-inp{background:#f0f0f0;border-color:rgba(0,0,0,.1);color:#0D0D0D;}
+body.light .step-card{background:#fff;border-color:rgba(0,0,0,.08);}
+body.light .step-desc{color:rgba(0,0,0,.5);}
+body.light .btn-full-o{border-color:rgba(0,0,0,.2);color:#0D0D0D;}
+body.light .admin-tabs{border-color:rgba(0,0,0,.1);}
+body.light .atab{color:rgba(0,0,0,.4);}
+body.light .t-row{color:#0D0D0D;border-color:rgba(0,0,0,.05);}
+body.light .t-row.hdr{color:rgba(0,0,0,.4);}
+body.light .dots .dot{background:rgba(0,0,0,.2);}
+body.light .stag{background:#fff;border-color:rgba(0,0,0,.1);color:rgba(0,0,0,.5);}
+body.light .ptag{background:rgba(0,0,0,.06);color:rgba(0,0,0,.5);}
+body.light .hero-badge{background:rgba(0,168,107,.1);}
+body.light .pbox{background:rgba(0,168,107,.05);}
+body.light .pm{border-color:rgba(0,0,0,.12);}
+body.light .hero-btns .btn-o{background:rgba(0,0,0,.06);border-color:rgba(0,0,0,.12);color:#0D0D0D;}
 </style>
 </head>
 <body>
 
-<!-- ===== NAV ===== -->
-<nav>
-  <div class="logo" onclick="goTo('home')">Serviços<span>Já</span>Moz</div>
-  <div class="nav-links">
-    <a onclick="goTo('home')">Início</a>
-    <a onclick="goTo('home')">Explorar</a>
-    <a onclick="goTo('chat')" id="nav-chat">💬 Chat</a>
-    <a onclick="goTo('admin')" id="nav-admin">📊 Painel</a>
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="tb-logo" id="tb-logo">Serviços<span>Já</span>Moz</div>
+  <div class="tb-nav">
+    <button class="tb-arrow" id="arrow-l">‹</button>
+    <span class="tb-label" id="tb-label">Início</span>
+    <button class="tb-arrow" id="arrow-r">›</button>
   </div>
-  <div class="nav-actions">
-    <button class="theme-btn" onclick="toggleTheme()" id="theme-btn" title="Trocar tema">🌙</button>
-    <button class="notif-btn" onclick="toggleNotif()" title="Notificações">
-      🔔<span class="notif-dot" id="notif-dot"></span>
-    </button>
-    <button class="btn-sm btn-outline" onclick="goTo('home')">Entrar</button>
-    <button class="btn-sm btn-green-sm" onclick="iniciarRegisto()">Registar ▸</button>
-  </div>
-</nav>
+  <button class="tb-theme" id="tb-theme">🌙</button>
+</div>
 
-<!-- PAINEL NOTIFICAÇÕES -->
-<div class="notif-panel" id="notif-panel">
-  <div class="np-hdr">
-    <div class="np-title">Notificações</div>
-    <button class="np-close" onclick="toggleNotif()">×</button>
+<!-- SLIDES -->
+<div class="slides-wrap">
+<div class="slides-track" id="track">
+
+<!-- SLIDE 0: HERO -->
+<div class="slide center" id="s0">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 60%,rgba(0,168,107,.15) 0%,transparent 70%);pointer-events:none;"></div>
+  <div class="hero-badge">🇲🇿 A plataforma #1 de Moçambique</div>
+  <div class="hero">
+    <h1>Encontre o <span class="ac">serviço certo</span>,<br>onde <span class="ar">precisar</span>.</h1>
+    <p>Conectamos clientes com os melhores prestadores em todo Moçambique.</p>
   </div>
-  <div class="notif-item" onclick="goTo('chat');toggleNotif()">
-    <div class="ni-icon ni-b">💬</div>
-    <div><div class="ni-text"><strong>Carlos Mondlane</strong> enviou-lhe uma mensagem</div><div class="ni-time">há 2 min</div></div>
+  <div class="hero-btns">
+    <button class="btn-g" onclick="ir(1)">🔍 Pesquisar serviço</button>
+    <button class="btn-o" onclick="ir(5)">Oferecer serviço →</button>
   </div>
-  <div class="notif-item">
-    <div class="ni-icon ni-g">💰</div>
-    <div><div class="ni-text">Novo pagamento recebido: <strong>702 MT</strong></div><div class="ni-time">há 15 min</div></div>
-  </div>
-  <div class="notif-item">
-    <div class="ni-icon ni-y">⭐</div>
-    <div><div class="ni-text">Nova avaliação de 5 estrelas no seu perfil</div><div class="ni-time">há 1 hora</div></div>
-  </div>
-  <div class="notif-item">
-    <div class="ni-icon ni-g">👤</div>
-    <div><div class="ni-text"><strong>Fátima Cossa</strong> registou-se como prestadora</div><div class="ni-time">há 2 horas</div></div>
+  <div class="stats">
+    <div class="stat"><div class="stat-n">2.400+</div><div class="stat-l">Prestadores</div></div>
+    <div class="stat"><div class="stat-n">18k+</div><div class="stat-l">Serviços</div></div>
+    <div class="stat"><div class="stat-n">11</div><div class="stat-l">Províncias</div></div>
+    <div class="stat"><div class="stat-n">4.8⭐</div><div class="stat-l">Avaliação</div></div>
   </div>
 </div>
 
-<!-- ===== HOME ===== -->
-<div class="screen active" id="home">
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-badge">🇲🇿 A plataforma de serviços #1 de Moçambique</div>
-    <h1>Encontre o <span class="ac">serviço certo</span>,<br>onde <span class="acr">precisar</span>.</h1>
-    <p>Conectamos clientes com os melhores prestadores em todo Moçambique. Rápido, seguro e de confiança.</p>
-    <div class="hero-ctas">
-      <button class="btn-big btn-big-g" onclick="goTo('home')">Encontrar serviço</button>
-      <button class="btn-big btn-big-gh" onclick="iniciarRegisto()">Oferecer serviço →</button>
-    </div>
-    <div class="stats">
-      <div class="stat"><div class="stat-n">2.400+</div><div class="stat-l">Prestadores ativos</div></div>
-      <div class="stat"><div class="stat-n">18k+</div><div class="stat-l">Serviços realizados</div></div>
-      <div class="stat"><div class="stat-n">11</div><div class="stat-l">Províncias cobertas</div></div>
-      <div class="stat"><div class="stat-n">4.8⭐</div><div class="stat-l">Avaliação média</div></div>
-    </div>
-  </section>
-  <div class="search-wrap">
-    <div class="search-lbl">Pesquisar serviços</div>
-    <div class="sbox">
-      <input type="text" placeholder="Ex: Eletricista, Canalizador, Designer...">
-      <div class="sloc"><span class="dot">●</span> Maputo</div>
-      <button class="sbtn">Pesquisar</button>
-    </div>
-    <div class="stags">
-      <span class="tag">🔧 Reparações</span><span class="tag">🎨 Design</span>
-      <span class="tag">🚗 Transporte</span><span class="tag">🧹 Limpeza</span>
-      <span class="tag">💻 Informática</span><span class="tag">🍽️ Catering</span>
-      <span class="tag">🪚 Carpintaria</span><span class="tag">🧱 Pedreiro</span>
-    </div>
+<!-- SLIDE 1: PESQUISA -->
+<div class="slide" id="s1">
+  <div class="s-label">Pesquisar serviços</div>
+  <div class="sbox">
+    <input type="text" id="sinput" placeholder="Ex: Electricista, Carpinteiro..." onkeydown="if(event.key==='Enter')pesq()">
+    <button class="sbtn" onclick="pesq()">Ir</button>
   </div>
-  <section class="sec">
-    <div class="sec-hdr"><h2 class="sec-title">Categorias populares</h2><a class="see-all">Ver todas →</a></div>
-    <div class="cat-grid">
-      <div class="cat-card"><div class="ci">⚡</div><div class="cn">Electricidade</div><div class="cc">342</div></div>
-      <div class="cat-card"><div class="ci">🔧</div><div class="cn">Canalização</div><div class="cc">218</div></div>
-      <div class="cat-card"><div class="ci">🎨</div><div class="cn">Pintura</div><div class="cc">185</div></div>
-      <div class="cat-card"><div class="ci">💻</div><div class="cn">Informática</div><div class="cc">290</div></div>
-      <div class="cat-card"><div class="ci">🧹</div><div class="cn">Limpeza</div><div class="cc">410</div></div>
-      <div class="cat-card"><div class="ci">🚗</div><div class="cn">Transporte</div><div class="cc">174</div></div>
-      <div class="cat-card"><div class="ci">🍳</div><div class="cn">Cozinheiro</div><div class="cc">98</div></div>
-      <div class="cat-card"><div class="ci">📸</div><div class="cn">Fotografia</div><div class="cc">127</div></div>
-      <div class="cat-card"><div class="ci">🏗️</div><div class="cn">Construção</div><div class="cc">201</div></div>
-      <div class="cat-card"><div class="ci">🌿</div><div class="cn">Jardinagem</div><div class="cc">76</div></div>
-      <div class="cat-card"><div class="ci">🎓</div><div class="cn">Explicações</div><div class="cc">256</div></div>
-      <div class="cat-card"><div class="ci">💇</div><div class="cn">Beleza</div><div class="cc">318</div></div>
-      <div class="cat-card"><div class="ci">🪚</div><div class="cn">Carpintaria</div><div class="cc">143</div></div>
-      <div class="cat-card"><div class="ci">🔨</div><div class="cn">Serralharia</div><div class="cc">89</div></div>
-      <div class="cat-card"><div class="ci">🧱</div><div class="cn">Pedreiro</div><div class="cc">167</div></div>
-      <div class="cat-card"><div class="ci">❄️</div><div class="cn">Ar condicionado</div><div class="cc">54</div></div>
-      <div class="cat-card"><div class="ci">🖥️</div><div class="cn">Electricista auto</div><div class="cc">72</div></div>
-      <div class="cat-card"><div class="ci">🧴</div><div class="cn">Estética</div><div class="cc">198</div></div>
-    </div>
-  </section>
-  <section class="sec" style="padding-top:0">
-    <div class="sec-hdr"><h2 class="sec-title">Prestadores em destaque</h2><a class="see-all">Ver todos →</a></div>
-    <div class="prov-grid">
-      <div class="prov-card" onclick="abrirChat('carlos')">
-        <div class="ph"><div class="av av1">👨‍🔧</div><div><div class="pname">Carlos Mondlane</div><div class="prole">Electricista Certificado</div></div><div class="pbadge">✓ Verificado</div></div>
-        <div class="pstats"><div class="ps"><span class="psv">⭐ 4.9</span><span class="psk">avaliação</span></div><div class="ps"><span class="psv">147</span><span class="psk">trabalhos</span></div><div class="ps"><span class="psv">Maputo</span></div></div>
-        <div class="ptags"><span class="ptag">Instalações</span><span class="ptag">Manutenção</span><span class="ptag">Urgências</span></div>
-        <div class="pfooter"><div class="pprice">desde <strong>800 MT</strong>/h</div><button class="btn-contact" onclick="event.stopPropagation();abrirChat('carlos')">💬 Chat</button></div>
-      </div>
-      <div class="prov-card" onclick="abrirChat('fatima')">
-        <div class="ph"><div class="av av2">👩‍💻</div><div><div class="pname">Fátima Cossa</div><div class="prole">Designer Gráfica</div></div><div class="pbadge">✓ Verificado</div></div>
-        <div class="pstats"><div class="ps"><span class="psv">⭐ 4.8</span><span class="psk">avaliação</span></div><div class="ps"><span class="psv">89</span><span class="psk">trabalhos</span></div><div class="ps"><span class="psv">Online</span></div></div>
-        <div class="ptags"><span class="ptag">Logos</span><span class="ptag">Redes Sociais</span><span class="ptag">Branding</span></div>
-        <div class="pfooter"><div class="pprice">desde <strong>1.500 MT</strong></div><button class="btn-contact" onclick="event.stopPropagation();abrirChat('fatima')">💬 Chat</button></div>
-      </div>
-      <div class="prov-card" onclick="abrirChat('joao')">
-        <div class="ph"><div class="av av3">🔧</div><div><div class="pname">João Machava</div><div class="prole">Canalizador</div></div><div class="pbadge">✓ Verificado</div></div>
-        <div class="pstats"><div class="ps"><span class="psv">⭐ 4.7</span><span class="psk">avaliação</span></div><div class="ps"><span class="psv">203</span><span class="psk">trabalhos</span></div><div class="ps"><span class="psv">Matola</span></div></div>
-        <div class="ptags"><span class="ptag">Fugas</span><span class="ptag">Instalações</span><span class="ptag">24h</span></div>
-        <div class="pfooter"><div class="pprice">desde <strong>600 MT</strong>/h</div><button class="btn-contact" onclick="event.stopPropagation();abrirChat('joao')">💬 Chat</button></div>
-      </div>
-    </div>
-  </section>
-  <section class="how-sec">
-    <div class="how-inner">
-      <div class="sec-title" style="text-align:center">Como funciona?</div>
-      <div class="steps3">
-        <div class="step3"><div class="snum">1</div><div class="stit">Pesquise</div><div class="sdesc">Descreva o que precisa ou navegue pelas categorias.</div></div>
-        <div class="step3"><div class="snum">2</div><div class="stit">Contacte</div><div class="sdesc">Fale directamente pelo chat integrado da plataforma.</div></div>
-        <div class="step3"><div class="snum">3</div><div class="stit">Pronto!</div><div class="sdesc">Combine detalhes, pague de forma segura e avalie.</div></div>
-      </div>
-    </div>
-  </section>
-  <section class="cta-sec">
-    <h2>Pronto para <span style="color:var(--green)">começar</span>?</h2>
-    <p>Milhares de moçambicanos já encontram e oferecem serviços pela plataforma.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-      <button class="btn-big btn-big-g">Encontrar serviços</button>
-      <button class="btn-big btn-big-gh" onclick="iniciarRegisto()">Tornar-me prestador</button>
-    </div>
-  </section>
-  <footer>
-    <div class="logo">Serviços<span style="color:var(--green)">Já</span>Moz</div>
-    <div class="flinks"><a>Sobre nós</a><a>Termos</a><a>Privacidade</a><a>Suporte</a></div>
-    <div class="fcopy" onclick="abrirLoginDono()" style="cursor:pointer;user-select:none;">© 2026 ServiçosJáMoz · Moçambique 🇲🇿</div>
-  </footer>
+  <div class="stags">
+    <span class="stag" onclick="pesqTag('Electricidade')">⚡ Electricidade</span>
+    <span class="stag" onclick="pesqTag('Canalização')">🔧 Canalização</span>
+    <span class="stag" onclick="pesqTag('Limpeza')">🧹 Limpeza</span>
+    <span class="stag" onclick="pesqTag('Informática')">💻 Informática</span>
+    <span class="stag" onclick="pesqTag('Carpintaria')">🪚 Carpintaria</span>
+    <span class="stag" onclick="pesqTag('Design')">🎨 Design</span>
+    <span class="stag" onclick="pesqTag('Transporte')">🚗 Transporte</span>
+    <span class="stag" onclick="pesqTag('Beleza')">💇 Beleza</span>
+    <span class="stag" onclick="pesqTag('Pedreiro')">🧱 Pedreiro</span>
+    <span class="stag" onclick="pesqTag('Catering')">🍽️ Catering</span>
+  </div>
+  <div id="sres" style="display:none;">
+    <div class="res-title" id="sres-title"></div>
+    <div id="sres-list"></div>
+  </div>
 </div>
 
-<!-- ===== LOGIN DONO (SECRETO) ===== -->
-<div class="screen" id="login-dono">
-  <div class="container" style="display:flex;align-items:center;justify-content:center;min-height:100vh;padding-top:0;">
-    <div style="width:100%">
-      <div class="card">
-        <div style="text-align:center;margin-bottom:24px;">
-          <div style="font-size:48px;margin-bottom:12px;">🔐</div>
-          <div class="card-title" style="text-align:center;">Acesso do Proprietário</div>
-          <div class="card-sub" style="text-align:center;margin-bottom:0;">Área restrita — ServiçosJáMoz</div>
-        </div>
-        <div class="fg">
-          <label class="fl">Email do proprietário</label>
-          <input class="fi" type="email" id="dono-email" placeholder="dono@gmail.com">
-        </div>
-        <div class="fg">
-          <label class="fl">Palavra-passe</label>
-          <input class="fi" type="password" id="dono-pass" placeholder="••••••••" onkeydown="if(event.key==='Enter') loginDono()">
-        </div>
-        <div id="login-erro" style="display:none;background:rgba(206,17,38,.1);border:1px solid rgba(206,17,38,.3);border-radius:10px;padding:12px;font-size:13px;color:#ff6b6b;margin-bottom:14px;text-align:center;">
-          ❌ Email ou palavra-passe incorrectos.
-        </div>
-        <button class="btn-full btn-full-g" onclick="loginDono()">Entrar no painel →</button>
-        <button class="btn-full btn-full-o" onclick="goTo('home')">← Voltar ao início</button>
-        <div style="text-align:center;margin-top:16px;font-size:12px;color:var(--muted);">
-          Primeira vez? Use as credenciais padrão:<br>
-          <strong style="color:var(--green);">wilaryecacicaci@gmail.com</strong> / <strong style="color:var(--green);">admin123</strong><br>
-          <span style="font-size:11px;">Altere nas Configurações após entrar.</span>
-        </div>
+<!-- SLIDE 2: CATEGORIAS -->
+<div class="slide" id="s2">
+  <div class="sec-hdr"><h2 class="sec-title">Categorias</h2></div>
+  <div class="cat-grid">
+    <div class="cat-card" onclick="pesqTag('Electricidade')"><div class="ci">⚡</div><div class="cn">Electricidade</div><div class="cc">342</div></div>
+    <div class="cat-card" onclick="pesqTag('Canalização')"><div class="ci">🔧</div><div class="cn">Canalização</div><div class="cc">218</div></div>
+    <div class="cat-card" onclick="pesqTag('Pintura')"><div class="ci">🎨</div><div class="cn">Pintura</div><div class="cc">185</div></div>
+    <div class="cat-card" onclick="pesqTag('Informática')"><div class="ci">💻</div><div class="cn">Informática</div><div class="cc">290</div></div>
+    <div class="cat-card" onclick="pesqTag('Limpeza')"><div class="ci">🧹</div><div class="cn">Limpeza</div><div class="cc">410</div></div>
+    <div class="cat-card" onclick="pesqTag('Transporte')"><div class="ci">🚗</div><div class="cn">Transporte</div><div class="cc">174</div></div>
+    <div class="cat-card" onclick="pesqTag('Cozinheiro')"><div class="ci">🍳</div><div class="cn">Cozinheiro</div><div class="cc">98</div></div>
+    <div class="cat-card" onclick="pesqTag('Fotografia')"><div class="ci">📸</div><div class="cn">Fotografia</div><div class="cc">127</div></div>
+    <div class="cat-card" onclick="pesqTag('Construção')"><div class="ci">🏗️</div><div class="cn">Construção</div><div class="cc">201</div></div>
+    <div class="cat-card" onclick="pesqTag('Jardinagem')"><div class="ci">🌿</div><div class="cn">Jardinagem</div><div class="cc">76</div></div>
+    <div class="cat-card" onclick="pesqTag('Explicações')"><div class="ci">🎓</div><div class="cn">Explicações</div><div class="cc">256</div></div>
+    <div class="cat-card" onclick="pesqTag('Beleza')"><div class="ci">💇</div><div class="cn">Beleza</div><div class="cc">318</div></div>
+    <div class="cat-card" onclick="pesqTag('Carpintaria')"><div class="ci">🪚</div><div class="cn">Carpintaria</div><div class="cc">143</div></div>
+    <div class="cat-card" onclick="pesqTag('Serralharia')"><div class="ci">🔨</div><div class="cn">Serralharia</div><div class="cc">89</div></div>
+    <div class="cat-card" onclick="pesqTag('Pedreiro')"><div class="ci">🧱</div><div class="cn">Pedreiro</div><div class="cc">167</div></div>
+    <div class="cat-card" onclick="pesqTag('Ar condicionado')"><div class="ci">❄️</div><div class="cn">Ar cond.</div><div class="cc">54</div></div>
+    <div class="cat-card" onclick="pesqTag('Estética')"><div class="ci">🧴</div><div class="cn">Estética</div><div class="cc">198</div></div>
+    <div class="cat-card" onclick="pesqTag('Electricidade')"><div class="ci">🔌</div><div class="cn">Elect. auto</div><div class="cc">72</div></div>
+  </div>
+</div>
+
+<!-- SLIDE 3: PRESTADORES -->
+<div class="slide" id="s3">
+  <div class="sec-hdr"><h2 class="sec-title">Em destaque</h2></div>
+  <div id="prov-list">
+    <div class="prov-card">
+      <div class="ph"><div class="av av1">👨‍🔧</div><div><div class="pname">Carlos Mondlane</div><div class="prole">Electricista Certificado · Maputo</div></div><div class="pbadge">✓</div></div>
+      <div class="pstats"><div><span class="psv">⭐ 4.9</span><span class="psk">avaliação</span></div><div><span class="psv">147</span><span class="psk">trabalhos</span></div></div>
+      <div class="ptags"><span class="ptag">Instalações</span><span class="ptag">Manutenção</span><span class="ptag">Urgências</span></div>
+      <div class="pprice">desde <strong>800 MT</strong>/h</div>
+      <div class="contact-btns">
+        <button class="cbtn cbtn-chat" onclick="abrirChat('carlos')">💬 Chat</button>
+        <a href="tel:+258840000001" style="text-decoration:none;"><button class="cbtn cbtn-call" style="width:100%">📞 Ligar</button></a>
+        <a href="https://wa.me/258840000001?text=Ol%C3%A1!+Vi+o+seu+perfil+no+Servi%C3%A7os+J%C3%A1+Moz." target="_blank" style="text-decoration:none;"><button class="cbtn cbtn-wa" style="width:100%">📱 WhatsApp</button></a>
+      </div>
+    </div>
+    <div class="prov-card">
+      <div class="ph"><div class="av av2">👩‍💻</div><div><div class="pname">Fátima Cossa</div><div class="prole">Designer Gráfica · Online</div></div><div class="pbadge">✓</div></div>
+      <div class="pstats"><div><span class="psv">⭐ 4.8</span><span class="psk">avaliação</span></div><div><span class="psv">89</span><span class="psk">trabalhos</span></div></div>
+      <div class="ptags"><span class="ptag">Logos</span><span class="ptag">Redes Sociais</span><span class="ptag">Branding</span></div>
+      <div class="pprice">desde <strong>1.500 MT</strong></div>
+      <div class="contact-btns">
+        <button class="cbtn cbtn-chat" onclick="abrirChat('fatima')">💬 Chat</button>
+        <a href="tel:+258860000002" style="text-decoration:none;"><button class="cbtn cbtn-call" style="width:100%">📞 Ligar</button></a>
+        <a href="https://wa.me/258860000002?text=Ol%C3%A1!+Vi+o+seu+perfil+no+Servi%C3%A7os+J%C3%A1+Moz." target="_blank" style="text-decoration:none;"><button class="cbtn cbtn-wa" style="width:100%">📱 WhatsApp</button></a>
+      </div>
+    </div>
+    <div class="prov-card">
+      <div class="ph"><div class="av av3">🔧</div><div><div class="pname">João Machava</div><div class="prole">Canalizador · Matola</div></div><div class="pbadge">✓</div></div>
+      <div class="pstats"><div><span class="psv">⭐ 4.7</span><span class="psk">avaliação</span></div><div><span class="psv">203</span><span class="psk">trabalhos</span></div></div>
+      <div class="ptags"><span class="ptag">Fugas</span><span class="ptag">Instalações</span><span class="ptag">24h</span></div>
+      <div class="pprice">desde <strong>600 MT</strong>/h</div>
+      <div class="contact-btns">
+        <button class="cbtn cbtn-chat" onclick="abrirChat('joao')">💬 Chat</button>
+        <a href="tel:+258870000003" style="text-decoration:none;"><button class="cbtn cbtn-call" style="width:100%">📞 Ligar</button></a>
+        <a href="https://wa.me/258870000003?text=Ol%C3%A1!+Vi+o+seu+perfil+no+Servi%C3%A7os+J%C3%A1+Moz." target="_blank" style="text-decoration:none;"><button class="cbtn cbtn-wa" style="width:100%">📱 WhatsApp</button></a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ===== REGISTO ===== -->
-<div class="screen" id="registo">
-  <div class="container">
-    <div class="steps-bar">
-      <div class="si"><div class="sc active">1</div><span class="slabel active">Plano</span></div>
-      <div class="sl"></div><div class="si"><div class="sc">2</div><span class="slabel">Dados</span></div>
-      <div class="sl"></div><div class="si"><div class="sc">3</div><span class="slabel">Pagamento</span></div>
-      <div class="sl"></div><div class="si"><div class="sc">4</div><span class="slabel">Confirmação</span></div>
-    </div>
-    <div class="card">
-      <div class="card-title">Escolha o seu plano</div>
-      <div class="card-sub">Torne-se prestador e comece a receber clientes em Moçambique.</div>
-      <div class="plans">
-        <div class="plan" id="pl-basico" onclick="selectPlan('basico',100)">
-          <div class="plan-name">Básico</div><div class="plan-price">100</div><div class="plan-period">MT / mês</div>
-          <div class="plan-features"><div class="plan-feat">Perfil público</div><div class="plan-feat">5 contactos/mês</div><div class="plan-feat">Suporte básico</div></div>
-        </div>
-        <div class="plan selected" id="pl-pro" onclick="selectPlan('pro',200)">
-          <div class="plan-badge">⭐ Popular</div>
-          <div class="plan-name">Profissional</div><div class="plan-price">200</div><div class="plan-period">MT / mês</div>
-          <div class="plan-features"><div class="plan-feat">Destaque na pesquisa</div><div class="plan-feat">Contactos ilimitados</div><div class="plan-feat">Suporte prioritário</div></div>
-        </div>
-        <div class="plan" id="pl-premium" onclick="selectPlan('premium',300)">
-          <div class="plan-name">Premium</div><div class="plan-price">300</div><div class="plan-period">MT / mês</div>
-          <div class="plan-features"><div class="plan-feat">Topo da pesquisa</div><div class="plan-feat">Badge verificado</div><div class="plan-feat">Gestor dedicado</div></div>
-        </div>
+<!-- SLIDE 4: COMO FUNCIONA -->
+<div class="slide" id="s4">
+  <div class="sec-hdr"><h2 class="sec-title">Como funciona?</h2></div>
+  <div class="step-card"><div class="step-num">1</div><div><div class="step-title">Pesquise</div><div class="step-desc">Descreva o que precisa ou navegue pelas categorias de serviço.</div></div></div>
+  <div class="step-card"><div class="step-num">2</div><div><div class="step-title">Contacte</div><div class="step-desc">Fale directamente pelo chat, telefone ou WhatsApp.</div></div></div>
+  <div class="step-card"><div class="step-num">3</div><div><div class="step-title">Pronto!</div><div class="step-desc">Combine detalhes, pague com segurança e avalie o serviço.</div></div></div>
+  <div class="cta-box">
+    <div class="cta-title">É prestador?</div>
+    <div class="cta-sub">Registe-se e comece a receber clientes hoje!</div>
+    <button class="btn-g" onclick="ir(5)">Registar agora →</button>
+  </div>
+  <div class="footer-copy" onclick="ir(12)">© 2026 ServiçosJáMoz · Moçambique 🇲🇿</div>
+</div>
+
+<!-- SLIDE 5: PLANO -->
+<div class="slide" id="s5">
+  <div class="steps-bar">
+    <div class="si"><div class="sc active" id="sc1">1</div><span class="slabel active">Plano</span></div>
+    <div class="sl" id="sl1"></div>
+    <div class="si"><div class="sc" id="sc2">2</div><span class="slabel">Dados</span></div>
+    <div class="sl" id="sl2"></div>
+    <div class="si"><div class="sc" id="sc3">3</div><span class="slabel">Pagamento</span></div>
+    <div class="sl" id="sl3"></div>
+    <div class="si"><div class="sc" id="sc4">4</div><span class="slabel">Confirmação</span></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Escolha o seu plano</div>
+    <div class="card-sub">Torne-se prestador e receba clientes em Moçambique.</div>
+    <div class="plans">
+      <div class="plan" id="pl-basico" onclick="selPlano('basico',100)">
+        <div><div class="plan-name">Básico</div><div class="plan-feats">Perfil público · 5 contactos/mês</div></div>
+        <div><div class="plan-price">100</div><div class="plan-period">MT/mês</div></div>
       </div>
-      <button class="btn-full btn-full-g" onclick="goTo('dados')">Continuar →</button>
-      <button class="btn-full btn-full-o" onclick="goTo('home')">← Voltar</button>
+      <div class="plan selected" id="pl-pro" onclick="selPlano('pro',200)">
+        <div class="plan-badge">⭐ Popular</div>
+        <div><div class="plan-name">Profissional</div><div class="plan-feats">Destaque · Contactos ilimitados</div></div>
+        <div><div class="plan-price">200</div><div class="plan-period">MT/mês</div></div>
+      </div>
+      <div class="plan" id="pl-premium" onclick="selPlano('premium',300)">
+        <div><div class="plan-name">Premium</div><div class="plan-feats">Topo da pesquisa · Badge verificado</div></div>
+        <div><div class="plan-price">300</div><div class="plan-period">MT/mês</div></div>
+      </div>
+    </div>
+    <button class="btn-full btn-full-g" onclick="ir(6)">Continuar →</button>
+    <button class="btn-full btn-full-o" onclick="ir(0)">← Início</button>
+  </div>
+</div>
+
+<!-- SLIDE 6: DADOS -->
+<div class="slide" id="s6">
+  <div class="steps-bar">
+    <div class="si"><div class="sc done">✓</div><span class="slabel">Plano</span></div>
+    <div class="sl done"></div>
+    <div class="si"><div class="sc active">2</div><span class="slabel active">Dados</span></div>
+    <div class="sl"></div>
+    <div class="si"><div class="sc">3</div><span class="slabel">Pagamento</span></div>
+    <div class="sl"></div>
+    <div class="si"><div class="sc">4</div><span class="slabel">Confirmação</span></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Os seus dados</div>
+    <div class="card-sub">Preencha o seu perfil de prestador.</div>
+    <div class="frow">
+      <div class="fg"><label class="fl">Nome completo *</label><input class="fi" type="text" id="inp-nome" placeholder="Ex: João Silva"></div>
+      <div class="fg"><label class="fl">Telemóvel *</label><input class="fi" type="tel" id="inp-tel" placeholder="84 XXX XXXX"></div>
+    </div>
+    <div class="fg"><label class="fl">Email</label><input class="fi" type="email" id="inp-email" placeholder="exemplo@gmail.com"></div>
+    <div class="frow">
+      <div class="fg"><label class="fl">Categoria *</label>
+        <select class="fi" id="inp-cat">
+          <option value="">Selecionar...</option>
+          <option>Electricidade</option><option>Canalização</option><option>Limpeza</option>
+          <option>Informática</option><option>Pintura</option><option>Transporte</option>
+          <option>Design Gráfico</option><option>Fotografia</option><option>Construção</option>
+          <option>Jardinagem</option><option>Explicações</option><option>Beleza</option>
+          <option>Carpintaria</option><option>Serralharia</option><option>Pedreiro</option>
+          <option>Ar condicionado</option><option>Estética</option><option>Outros</option>
+        </select>
+      </div>
+      <div class="fg"><label class="fl">Província *</label>
+        <select class="fi" id="inp-prov">
+          <option value="">Selecionar...</option>
+          <option>Maputo Cidade</option><option>Maputo Província</option><option>Gaza</option>
+          <option>Inhambane</option><option>Sofala</option><option>Manica</option>
+          <option>Tete</option><option>Zambézia</option><option>Nampula</option>
+          <option>Cabo Delgado</option><option>Niassa</option>
+        </select>
+      </div>
+    </div>
+    <div class="frow">
+      <div class="fg"><label class="fl">Distrito *</label><input class="fi" type="text" id="inp-dist" placeholder="Ex: KaMpfumo"></div>
+      <div class="fg"><label class="fl">Bairro *</label><input class="fi" type="text" id="inp-bairro" placeholder="Ex: Polana"></div>
+    </div>
+    <div class="fg"><label class="fl">Descrição *</label><textarea class="fi" rows="3" id="inp-desc" style="resize:vertical" placeholder="Descreva a sua experiência..."></textarea></div>
+    <button class="btn-full btn-full-g" onclick="validarDados()">Avançar →</button>
+    <button class="btn-full btn-full-o" onclick="ir(5)">← Voltar</button>
+  </div>
+</div>
+
+<!-- SLIDE 7: PAGAMENTO -->
+<div class="slide" id="s7">
+  <div class="steps-bar">
+    <div class="si"><div class="sc done">✓</div><span class="slabel">Plano</span></div>
+    <div class="sl done"></div>
+    <div class="si"><div class="sc done">✓</div><span class="slabel">Dados</span></div>
+    <div class="sl done"></div>
+    <div class="si"><div class="sc active">3</div><span class="slabel active">Pagamento</span></div>
+    <div class="sl"></div>
+    <div class="si"><div class="sc">4</div><span class="slabel">Confirmação</span></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Método de pagamento</div>
+    <div class="card-sub">Escolha como quer pagar a subscrição.</div>
+    <div class="pmethods">
+      <div class="pm selected" id="pm-m" onclick="selPay('mpesa')"><div class="pm-icon">📱</div><div class="pm-name">M-Pesa</div><div class="pm-desc">Vodacom</div></div>
+      <div class="pm" id="pm-e" onclick="selPay('emola')"><div class="pm-icon">💳</div><div class="pm-name">e-Mola</div><div class="pm-desc">Movitel</div></div>
+      <div class="pm" id="pm-k" onclick="selPay('mkesh')"><div class="pm-icon">🏦</div><div class="pm-name">mKesh</div><div class="pm-desc">Millennium</div></div>
+    </div>
+    <div class="pbox">
+      <div class="pbox-title" id="pay-title">📱 Dados M-Pesa</div>
+      <div class="fg" style="margin-bottom:6px"><label class="fl">Número para débito *</label><input class="fi" type="tel" id="inp-pay" placeholder="84 XXX XXXX"></div>
+      <div style="font-size:11px;color:var(--muted);line-height:1.6;">
+        💡 Após clicar em Pagar, o sistema liga automaticamente ao operador e envia pedido de PIN.<br>
+        📩 Mensagem: <strong style="color:var(--g);">"Serviços Já Moz: Confirme o pagamento. Insira o seu PIN."</strong>
+      </div>
+    </div>
+    <div class="summary">
+      <div class="sum-row"><span>Plano <span id="sum-p">Profissional</span></span><span id="sum-v">200 MT</span></div>
+      <div class="sum-row"><span>IVA (17%)</span><span id="sum-iva">34 MT</span></div>
+      <div class="sum-row total"><span>Total</span><span id="sum-t">234 MT</span></div>
+    </div>
+    <button class="btn-full btn-full-g" onclick="pagar()">Pagar e ativar conta →</button>
+    <button class="btn-full btn-full-o" onclick="ir(6)">← Voltar</button>
+  </div>
+</div>
+
+<!-- SLIDE 8: PROCESSANDO -->
+<div class="slide center" id="s8">
+  <div class="card" style="width:100%;max-width:360px;text-align:center;">
+    <div class="phone-pulse">📱</div>
+    <div class="spinner"></div>
+    <div style="font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:8px;">A conectar ao operador...</div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.8;">
+      Pedido de PIN enviado para<br>
+      <strong id="proc-num" style="color:var(--g);"></strong><br><br>
+      📩 <strong style="color:var(--g);font-size:11px;">"Serviços Já Moz: Confirme o pagamento."</strong><br><br>
+      Insira o seu PIN no telemóvel...
     </div>
   </div>
 </div>
 
-<!-- ===== DADOS ===== -->
-<div class="screen" id="dados">
-  <div class="container">
-    <div class="steps-bar">
-      <div class="si"><div class="sc done">✓</div><span class="slabel">Plano</span></div>
-      <div class="sl done"></div><div class="si"><div class="sc active">2</div><span class="slabel active">Dados</span></div>
-      <div class="sl"></div><div class="si"><div class="sc">3</div><span class="slabel">Pagamento</span></div>
-      <div class="sl"></div><div class="si"><div class="sc">4</div><span class="slabel">Confirmação</span></div>
+<!-- SLIDE 9: SUCESSO -->
+<div class="slide" id="s9">
+  <div class="steps-bar">
+    <div class="si"><div class="sc done">✓</div><span class="slabel">Plano</span></div>
+    <div class="sl done"></div>
+    <div class="si"><div class="sc done">✓</div><span class="slabel">Dados</span></div>
+    <div class="sl done"></div>
+    <div class="si"><div class="sc done">✓</div><span class="slabel">Pagamento</span></div>
+    <div class="sl done"></div>
+    <div class="si"><div class="sc done">✓</div><span class="slabel">Confirmação</span></div>
+  </div>
+  <div class="card" style="text-align:center;">
+    <div class="success-icon">✓</div>
+    <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-bottom:8px;">Conta ativada! 🎉</div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.7;">
+      Bem-vindo à <strong>Serviços Já Moz</strong>, <strong id="suc-nome"></strong>!<br>
+      O seu perfil está visível para clientes em todo Moçambique.
     </div>
-    <div class="card">
-      <div class="card-title">Os seus dados</div>
-      <div class="card-sub">Preencha o seu perfil. Estes dados serão visíveis para os clientes.</div>
+    <div class="receipt">
+      <div class="rec-title">🧾 Comprovativo — Serviços Já Moz</div>
+      <div class="rec-row"><span class="rl">Referência</span><span class="rv" id="rec-ref"></span></div>
+      <div class="rec-row"><span class="rl">Plano</span><span class="rv" id="rec-pl"></span></div>
+      <div class="rec-row"><span class="rl">Valor pago</span><span class="rv gr" id="rec-val"></span></div>
+      <div class="rec-row"><span class="rl">Método</span><span class="rv" id="rec-met"></span></div>
+      <div class="rec-row"><span class="rl">Data</span><span class="rv" id="rec-dt"></span></div>
+      <div class="rec-row"><span class="rl">Próxima renovação</span><span class="rv" id="rec-ren"></span></div>
+    </div>
+    <button class="btn-full btn-full-g" onclick="ir(10)">💬 Abrir Chat</button>
+    <button class="btn-full btn-full-o" onclick="ir(0)">← Início</button>
+  </div>
+</div>
+
+<!-- SLIDE 10: CHAT -->
+<div class="slide" id="s10">
+  <div class="sec-hdr"><h2 class="sec-title">💬 Mensagens</h2></div>
+  <div class="conv-list">
+    <div class="conv-item on" onclick="selConv('carlos',this)">
+      <div class="conv-av av1">👨‍🔧</div>
+      <div><div class="conv-name">Carlos Mondlane</div><div class="conv-last">Pode vir amanhã às 9h?</div></div>
+      <div class="conv-unread">2</div>
+    </div>
+    <div class="conv-item" onclick="selConv('fatima',this)">
+      <div class="conv-av av2">👩‍💻</div>
+      <div><div class="conv-name">Fátima Cossa</div><div class="conv-last">Enviei o orçamento</div></div>
+    </div>
+    <div class="conv-item" onclick="selConv('joao',this)">
+      <div class="conv-av av3">🔧</div>
+      <div><div class="conv-name">João Machava</div><div class="conv-last">Ok, vejo na terça</div></div>
+    </div>
+    <div class="conv-item" onclick="selConv('ana',this)">
+      <div class="conv-av av4">👩‍🍳</div>
+      <div><div class="conv-name">Ana Sitoe</div><div class="conv-last">Quantas pessoas?</div></div>
+    </div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--border);">
+    <div class="conv-av av1" id="chat-av">👨‍🔧</div>
+    <div><div class="conv-name" id="chat-name">Carlos Mondlane</div><div style="font-size:11px;color:var(--g);">🟢 Online</div></div>
+  </div>
+  <div class="chat-box" id="chat-box"></div>
+  <div class="chat-inp-area">
+    <textarea class="chat-inp" id="chat-inp" rows="1" placeholder="Escreva uma mensagem..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();enviar();}"></textarea>
+    <button class="send-btn" onclick="enviar()">➤</button>
+  </div>
+</div>
+
+<!-- SLIDE 11: ADMIN -->
+<div class="slide" id="s11">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+    <div><div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800;">Painel do Proprietário</div>
+    <div style="font-size:11px;color:var(--muted);">ServiçosJáMoz · 2026</div></div>
+    <span style="font-size:11px;color:var(--g);background:rgba(0,168,107,.1);padding:3px 10px;border-radius:50px;">🟢 Ao vivo</span>
+  </div>
+  <div class="admin-tabs">
+    <div class="atab on" onclick="abaAdmin('visao',this)">📊 Visão</div>
+    <div class="atab" onclick="abaAdmin('pagamentos',this)">💰 Pagamentos</div>
+    <div class="atab" onclick="abaAdmin('conta',this)">🏦 Conta</div>
+    <div class="atab" onclick="abaAdmin('config',this)">⚙️ Config</div>
+  </div>
+
+  <!-- TAB VISAO -->
+  <div class="tab-content on" id="tab-visao">
+    <div class="kpi-grid">
+      <div class="kpi"><div class="kpi-lbl">💰 Receita</div><div class="kpi-val g" id="kpi-rec">18.420 MT</div></div>
+      <div class="kpi"><div class="kpi-lbl">👥 Prestadores</div><div class="kpi-val" id="kpi-pre">2.418</div></div>
+      <div class="kpi"><div class="kpi-lbl">💬 Mensagens</div><div class="kpi-val gold">847</div></div>
+      <div class="kpi"><div class="kpi-lbl">📈 Crescimento</div><div class="kpi-val g">+12%</div></div>
+    </div>
+    <div class="chart-wrap">
+      <div class="chart-title">Receita mensal (MT)</div>
+      <div class="chart-bars" id="chart-bars"></div>
+    </div>
+    <div id="prov-provs"></div>
+  </div>
+
+  <!-- TAB PAGAMENTOS -->
+  <div class="tab-content" id="tab-pagamentos">
+    <div class="t-row hdr"><span>Prestador</span><span>Plano</span><span>Valor</span></div>
+    <div id="pag-table">
+      <div class="t-row"><span>Carlos Mondlane</span><span><div class="badge-plan bp-p">Pro</div></span><span style="color:var(--g);font-weight:700">234 MT</span></div>
+      <div class="t-row"><span>Fátima Cossa</span><span><div class="badge-plan bp-pr">Premium</div></span><span style="color:var(--g);font-weight:700">351 MT</span></div>
+      <div class="t-row"><span>João Machava</span><span><div class="badge-plan bp-b">Básico</div></span><span style="color:var(--g);font-weight:700">117 MT</span></div>
+    </div>
+  </div>
+
+  <!-- TAB CONTA -->
+  <div class="tab-content" id="tab-conta">
+    <div class="acct-card"><div class="acct-lbl">📱 M-Pesa para receber</div><div class="acct-val" id="acct-mpesa">842557495</div><div class="acct-sub">Wilad António Cherene</div></div>
+    <div class="acct-card gold"><div class="acct-lbl">💵 Disponível para levantar</div><div class="acct-val" id="acct-lev">18.420 MT</div><div class="acct-sub">Actualizado agora</div></div>
+    <div class="card" style="margin-top:12px;">
+      <div class="card-title" style="font-size:15px;margin-bottom:4px;">💸 Fazer levantamento</div>
+      <div class="fg"><label class="fl">Valor (MT) *</label><input class="fi" type="number" id="lev-val" placeholder="Ex: 5000"></div>
+      <div class="fg"><label class="fl">Conta de destino *</label>
+        <select class="fi" id="lev-conta">
+          <option value="">Selecionar...</option>
+          <option>M-Pesa — 842557495</option>
+          <option>e-Mola — 863665947</option>
+          <option>Conta bancária</option>
+        </select>
+      </div>
+      <div class="fg"><label class="fl">Banco / IBAN (se aplicável)</label><input class="fi" type="text" id="lev-iban" placeholder="Ex: MZ59 0000..."></div>
+      <div class="lev-msg" id="lev-msg"></div>
+      <button class="btn-full btn-full-g" onclick="levantamento()">💸 Confirmar levantamento</button>
+    </div>
+    <div class="earn-note">💡 <strong>Como funciona:</strong> Os pagamentos são feitos directamente via M-Pesa/e-Mola para o número registado. As subscrições renovam automaticamente.</div>
+  </div>
+
+  <!-- TAB CONFIG -->
+  <div class="tab-content" id="tab-config">
+    <div class="cfg-section">
+      <div class="cfg-title">👤 Dados do proprietário</div>
+      <div class="fg"><label class="fl">Nome completo</label><input class="fi" type="text" id="cfg-nome" placeholder="Wilad António Cherene"></div>
+      <div class="fg"><label class="fl">Email de acesso</label><input class="fi" type="email" id="cfg-email" placeholder="wilaryecacicaci@gmail.com"></div>
+    </div>
+    <div class="cfg-section">
+      <div class="cfg-title">📱 Números de pagamento</div>
       <div class="frow">
-        <div class="fg"><label class="fl">Nome completo *</label><input class="fi" type="text" id="inp-nome" placeholder="Ex: Carlos Mondlane"></div>
-        <div class="fg"><label class="fl">Telemóvel *</label><input class="fi" type="tel" id="inp-tel" placeholder="842557495"></div>
+        <div class="fg"><label class="fl">M-Pesa</label><input class="fi" type="tel" id="cfg-mpesa" placeholder="842557495"></div>
+        <div class="fg"><label class="fl">e-Mola</label><input class="fi" type="tel" id="cfg-emola" placeholder="863665947"></div>
       </div>
-      <div class="fg"><label class="fl">Email</label><input class="fi" type="email" id="inp-email" placeholder="exemplo@gmail.com"></div>
+    </div>
+    <div class="cfg-section">
+      <div class="cfg-title">💰 Preços dos planos (MT/mês)</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;">
+        <div class="fg"><label class="fl">Básico</label><input class="fi" type="number" id="cfg-p1" value="100"></div>
+        <div class="fg"><label class="fl">Pro</label><input class="fi" type="number" id="cfg-p2" value="200"></div>
+        <div class="fg"><label class="fl">Premium</label><input class="fi" type="number" id="cfg-p3" value="300"></div>
+      </div>
+    </div>
+    <div class="cfg-section">
+      <div class="cfg-title">🔒 Palavra-passe do painel</div>
       <div class="frow">
-        <div class="fg"><label class="fl">Categoria *</label>
-          <select class="fi" id="inp-cat">
-            <option value="">Selecionar...</option>
-            <option>Electricidade</option><option>Canalização</option><option>Limpeza</option>
-            <option>Informática</option><option>Pintura</option><option>Transporte</option>
-            <option>Design Gráfico</option><option>Fotografia</option><option>Construção</option>
-            <option>Jardinagem</option><option>Explicações</option><option>Beleza</option>
-            <option>Carpintaria</option><option>Serralharia</option><option>Pedreiro</option>
-            <option>Ar condicionado</option><option>Electricista auto</option><option>Estética</option>
-            <option>Cozinheiro</option><option>Segurança</option><option>Outros</option>
-          </select>
-        </div>
-        <div class="fg"><label class="fl">Província *</label>
-          <select class="fi" id="inp-prov">
-            <option value="">Selecionar...</option>
-            <option>Maputo Cidade</option><option>Maputo Província</option><option>Gaza</option>
-            <option>Inhambane</option><option>Sofala</option><option>Manica</option>
-            <option>Tete</option><option>Zambézia</option><option>Nampula</option>
-            <option>Cabo Delgado</option><option>Niassa</option>
-          </select>
-        </div>
+        <div class="fg"><label class="fl">Nova senha</label><input class="fi" type="password" id="cfg-pass" placeholder="••••••••"></div>
+        <div class="fg"><label class="fl">Confirmar</label><input class="fi" type="password" id="cfg-pass2" placeholder="••••••••"></div>
       </div>
-      <div class="frow">
-        <div class="fg"><label class="fl">Distrito *</label>
-          <input class="fi" type="text" id="inp-distrito" placeholder="Ex: KaMpfumo, Matola...">
-        </div>
-        <div class="fg"><label class="fl">Bairro *</label>
-          <input class="fi" type="text" id="inp-bairro" placeholder="Ex: Sommerschield, Zimpeto...">
-        </div>
-      </div>
-      <div class="fg"><label class="fl">Descrição *</label><textarea class="fi" rows="3" id="inp-desc" style="resize:vertical" placeholder="Descreva a sua experiência..."></textarea></div>
-      <button class="btn-full btn-full-g" style="padding:16px;font-size:16px;" onclick="validarDados()">Avançar para pagamento →</button>
-      <button class="btn-full btn-full-o" style="padding:16px;font-size:16px;" onclick="goTo('registo')">← Voltar</button>
     </div>
+    <div class="cfg-success" id="cfg-ok">✅ Configurações guardadas!</div>
+    <button class="btn-full btn-full-g" onclick="guardarCfg()">💾 Guardar</button>
   </div>
 </div>
 
-<!-- ===== PAGAMENTO ===== -->
-<div class="screen" id="pagamento">
-  <div class="container">
-    <div class="steps-bar">
-      <div class="si"><div class="sc done">✓</div><span class="slabel">Plano</span></div>
-      <div class="sl done"></div><div class="si"><div class="sc done">✓</div><span class="slabel">Dados</span></div>
-      <div class="sl done"></div><div class="si"><div class="sc active">3</div><span class="slabel active">Pagamento</span></div>
-      <div class="sl"></div><div class="si"><div class="sc">4</div><span class="slabel">Confirmação</span></div>
-    </div>
-    <div class="card">
-      <div class="card-title">Método de pagamento</div>
-      <div class="card-sub">Escolha como prefere pagar a sua subscrição.</div>
-      <div class="pmethods">
-        <div class="pm selected" id="pm-mpesa" onclick="selectPay('mpesa')"><div class="pm-icon">📱</div><div class="pm-name">M-Pesa</div><div class="pm-desc">Vodacom</div></div>
-        <div class="pm" id="pm-emola" onclick="selectPay('emola')"><div class="pm-icon">💳</div><div class="pm-name">e-Mola</div><div class="pm-desc">Movitel</div></div>
-        <div class="pm" id="pm-mkesh" onclick="selectPay('mkesh')"><div class="pm-icon">🏦</div><div class="pm-name">mKesh</div><div class="pm-desc">Millennium</div></div>
-      </div>
-      <div class="pbox">
-        <div class="pbox-title" id="pay-title">📱 Dados M-Pesa</div>
-        <div class="fg" style="margin-bottom:0"><label class="fl">Número para débito *</label><input class="fi" type="tel" id="inp-pay-num" placeholder="Ex: 84 XXX XXXX"></div>
-        <div style="font-size:12px;color:var(--muted);margin-top:9px;line-height:1.6;">
-          💡 Ao clicar em Pagar, o sistema liga automaticamente ao operador e envia um pedido de PIN para o seu telemóvel.<br><br>
-          📩 A mensagem que irá receber será:<br>
-          <strong style="color:var(--green);">"Serviços Já Moz: Confirme o pagamento de [valor] MT. Insira o seu PIN para autorizar."</strong>
-        </div>
-      </div>
-      <div class="summary">
-        <div class="sum-row"><span>Plano <span id="sum-plano">Profissional</span></span><span id="sum-preco">200 MT</span></div>
-        <div class="sum-row"><span>Taxa de registo</span><span>0 MT</span></div>
-        <div class="sum-row"><span>IVA (17%)</span><span id="sum-iva">34 MT</span></div>
-        <div class="sum-row total"><span>Total</span><span id="sum-total">234 MT</span></div>
-      </div>
-      <div style="font-size:12px;color:var(--muted);margin-bottom:16px;padding:11px;border:1px solid rgba(255,255,255,.06);border-radius:9px;line-height:1.6;">🔒 Pagamento seguro. Não armazenamos dados de pagamento.</div>
-      <button class="btn-full btn-full-g" onclick="iniciarPagamento()">Pagar e ativar conta →</button>
-      <button class="btn-full btn-full-o" onclick="goTo('dados')">← Voltar</button>
-    </div>
+<!-- SLIDE 12: LOGIN DONO -->
+<div class="slide center" id="s12">
+  <div class="login-box">
+    <div class="login-icon">🔐</div>
+    <div class="login-title">Acesso do Proprietário</div>
+    <div class="login-sub">Área restrita — ServiçosJáMoz</div>
+    <div class="login-err" id="login-err">❌ Email ou senha incorrectos.</div>
+    <div class="fg"><label class="fl">Email</label><input class="fi" type="email" id="l-email" placeholder="wilaryecacicaci@gmail.com"></div>
+    <div class="fg"><label class="fl">Senha</label><input class="fi" type="password" id="l-pass" placeholder="••••••••" onkeydown="if(event.key==='Enter')loginDono()"></div>
+    <button class="btn-full btn-full-g" onclick="loginDono()">Entrar no painel →</button>
+    <button class="btn-full btn-full-o" onclick="ir(0)">← Início</button>
+    <div class="login-hint">Primeira vez? Use:<br><strong style="color:var(--g);">wilaryecacicaci@gmail.com</strong><br>Senha: <strong style="color:var(--g);">admin123</strong></div>
   </div>
 </div>
 
-<!-- ===== PROCESSANDO ===== -->
-<div class="screen" id="processando">
-  <div class="container">
-    <div class="card">
-      <div class="processing">
-        <div class="phone-pulse">📱</div>
-        <div class="spinner"></div>
-        <div style="font-family:'Syne',sans-serif;font-size:19px;font-weight:700;margin-bottom:9px;">A conectar ao operador...</div>
-        <div style="font-size:13px;color:var(--muted);line-height:1.8;">
-          Pedido de PIN enviado para<br>
-          <strong id="proc-num" style="color:var(--green)"></strong><br><br>
-          📩 Mensagem enviada ao seu telemóvel:<br>
-          <strong style="color:var(--green);font-size:12px;">"Serviços Já Moz: Confirme o pagamento. Insira o seu PIN para autorizar."</strong><br><br>
-          Aguarde a confirmação...
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+</div><!-- /track -->
+</div><!-- /slides-wrap -->
 
-<!-- ===== SUCESSO ===== -->
-<div class="screen" id="sucesso">
-  <div class="container">
-    <div class="steps-bar">
-      <div class="si"><div class="sc done">✓</div><span class="slabel">Plano</span></div>
-      <div class="sl done"></div><div class="si"><div class="sc done">✓</div><span class="slabel">Dados</span></div>
-      <div class="sl done"></div><div class="si"><div class="sc done">✓</div><span class="slabel">Pagamento</span></div>
-      <div class="sl done"></div><div class="si"><div class="sc done">✓</div><span class="slabel">Confirmação</span></div>
-    </div>
-    <div class="card">
-      <div class="success-wrap">
-        <div class="success-icon">✓</div>
-        <div class="suc-title">Conta ativada! 🎉</div>
-        <div class="suc-sub">Bem-vindo à <strong>Serviços Já Moz</strong>, <strong id="suc-nome"></strong>!<br>O seu perfil está visível para clientes em toda Moçambique.</div>
-        <div class="receipt">
-          <div class="rec-title">🧾 Comprovativo — Serviços Já Moz</div>
-          <div class="rec-row"><span class="rl">Referência</span><span class="rv" id="rec-ref"></span></div>
-          <div class="rec-row"><span class="rl">Plano</span><span class="rv" id="rec-plano"></span></div>
-          <div class="rec-row"><span class="rl">Valor pago</span><span class="rv g" id="rec-valor"></span></div>
-          <div class="rec-row"><span class="rl">Método</span><span class="rv" id="rec-metodo"></span></div>
-          <div class="rec-row"><span class="rl">Data</span><span class="rv" id="rec-data"></span></div>
-          <div class="rec-row"><span class="rl">Próxima renovação</span><span class="rv" id="rec-renovacao"></span></div>
-        </div>
-        <button class="btn-full btn-full-g" style="padding:16px;font-size:16px;" onclick="goTo('chat')">💬 Abrir Chat</button>
-        <button class="btn-full btn-full-o" style="padding:16px;font-size:16px;" onclick="goTo('home')">← Voltar ao início</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== CHAT ===== -->
-<div class="screen" id="chat">
-  <div class="chat-layout">
-    <!-- Sidebar -->
-    <div class="chat-sidebar">
-      <div class="chat-sidebar-hdr">
-        <div class="chat-sidebar-title">💬 Mensagens</div>
-        <input class="chat-search" type="text" placeholder="Pesquisar conversa...">
-      </div>
-      <div class="conv-list" id="conv-list">
-        <div class="conv-item active" onclick="selectConv('carlos')">
-          <div class="conv-av av1">👨‍🔧</div>
-          <div class="conv-info">
-            <div class="conv-name">Carlos Mondlane</div>
-            <div class="conv-last">Pode vir amanhã às 9h?</div>
-          </div>
-          <div class="conv-meta"><div class="conv-time">14:32</div><div class="conv-unread">2</div></div>
-        </div>
-        <div class="conv-item" onclick="selectConv('fatima')">
-          <div class="conv-av av2">👩‍💻</div>
-          <div class="conv-info">
-            <div class="conv-name">Fátima Cossa</div>
-            <div class="conv-last">Enviei o orçamento por email</div>
-          </div>
-          <div class="conv-meta"><div class="conv-time">12:15</div></div>
-        </div>
-        <div class="conv-item" onclick="selectConv('joao')">
-          <div class="conv-av av3">🔧</div>
-          <div class="conv-info">
-            <div class="conv-name">João Machava</div>
-            <div class="conv-last">Ok, vejo o problema na terça</div>
-          </div>
-          <div class="conv-meta"><div class="conv-time">Seg</div></div>
-        </div>
-        <div class="conv-item" onclick="selectConv('ana')">
-          <div class="conv-av av4">👩‍🍳</div>
-          <div class="conv-info">
-            <div class="conv-name">Ana Sitoe</div>
-            <div class="conv-last">Quantas pessoas são no evento?</div>
-          </div>
-          <div class="conv-meta"><div class="conv-time">Dom</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main chat -->
-    <div class="chat-main">
-      <div class="chat-hdr" id="chat-hdr">
-        <div class="chat-hdr-av av1" id="chat-av">👨‍🔧</div>
-        <div>
-          <div class="chat-hdr-name" id="chat-name">Carlos Mondlane</div>
-          <div class="chat-hdr-status">🟢 Online agora</div>
-        </div>
-        <div class="chat-hdr-actions">
-          <button class="chat-action-btn">📞 Ligar</button>
-          <button class="chat-action-btn">👤 Perfil</button>
-          <button class="chat-action-btn" onclick="goTo('home')">✕ Fechar</button>
-        </div>
-      </div>
-
-      <div class="chat-messages" id="chat-messages"></div>
-
-      <div class="chat-input-area">
-        <button class="attach-btn" title="Anexar ficheiro">📎</button>
-        <textarea class="chat-input" id="chat-input-box" rows="1" placeholder="Escreva uma mensagem..." onkeydown="handleKey(event)"></textarea>
-        <button class="send-btn" onclick="enviarMensagem()">➤</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== ADMIN ===== -->
-<div class="screen" id="admin">
-  <div class="container-wide">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
-      <div>
-        <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;">Painel do Proprietário</div>
-        <div style="font-size:13px;color:var(--muted);">ServiçosJáMoz · Maio 2026</div>
-      </div>
-      <span style="font-size:12px;color:var(--green);background:rgba(0,168,107,.1);padding:5px 14px;border-radius:50px;">🟢 Ao vivo</span>
-    </div>
-
-    <!-- TABS -->
-    <div class="admin-tabs">
-      <div class="atab active" onclick="switchTab('visao')">📊 Visão geral</div>
-      <div class="atab" onclick="switchTab('pagamentos')">💰 Pagamentos</div>
-      <div class="atab" onclick="switchTab('prestadores')">👥 Prestadores</div>
-      <div class="atab" onclick="switchTab('conta')">🏦 Minha conta</div>
-      <div class="atab" onclick="switchTab('config')">⚙️ Configurações</div>
-    </div>
-
-    <!-- TAB: VISÃO GERAL -->
-    <div class="tab-content active" id="tab-visao">
-      <div class="kpi-grid">
-        <div class="kpi"><div class="kpi-lbl">💰 Receita total</div><div class="kpi-val g" id="kpi-receita">18.420 MT</div><div class="kpi-change up">↑ +12% vs mês anterior</div></div>
-        <div class="kpi"><div class="kpi-lbl">👥 Prestadores ativos</div><div class="kpi-val" id="kpi-prest">2.418</div><div class="kpi-change up">↑ +34 este mês</div></div>
-        <div class="kpi"><div class="kpi-lbl">💬 Mensagens hoje</div><div class="kpi-val gold">847</div><div class="kpi-change up">↑ +5%</div></div>
-        <div class="kpi"><div class="kpi-lbl">⚠️ Pendentes</div><div class="kpi-val red">12</div><div class="kpi-change down">pagamentos por confirmar</div></div>
-      </div>
-      <div class="chart-wrap">
-        <div class="chart-title">Receita mensal (MT)</div>
-        <div class="chart-bars" id="chart-bars"></div>
-      </div>
-      <div class="prov-grid-admin" id="prov-provs"></div>
-    </div>
-
-    <!-- TAB: PAGAMENTOS -->
-    <div class="tab-content" id="tab-pagamentos">
-      <div class="table-wrap">
-        <div class="table-hdr">
-          <div class="table-title">Histórico de pagamentos</div>
-          <select class="table-filter"><option>Todos os planos</option><option>Básico</option><option>Profissional</option><option>Premium</option></select>
-        </div>
-        <div class="t-row header"><span>Prestador</span><span>Plano</span><span>Valor</span><span>Método</span><span>Estado</span></div>
-        <div id="pagamentos-table">
-          <div class="t-row"><span>Carlos Mondlane</span><span><div class="badge-plan bp-pro">Pro</div></span><span style="color:var(--green);font-weight:700">702 MT</span><span>M-Pesa</span><span><div class="badge-status bs-ativo">Ativo</div></span></div>
-          <div class="t-row"><span>Fátima Cossa</span><span><div class="badge-plan bp-premium">Premium</div></span><span style="color:var(--green);font-weight:700">1.404 MT</span><span>e-Mola</span><span><div class="badge-status bs-ativo">Ativo</div></span></div>
-          <div class="t-row"><span>João Machava</span><span><div class="badge-plan bp-basico">Básico</div></span><span style="color:var(--green);font-weight:700">351 MT</span><span>M-Pesa</span><span><div class="badge-status bs-ativo">Ativo</div></span></div>
-          <div class="t-row"><span>Ana Sitoe</span><span><div class="badge-plan bp-pro">Pro</div></span><span style="color:var(--green);font-weight:700">702 MT</span><span>mKesh</span><span><div class="badge-status bs-pendente">Pendente</div></span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB: PRESTADORES -->
-    <div class="tab-content" id="tab-prestadores">
-      <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr)">
-        <div class="kpi"><div class="kpi-lbl">Total registados</div><div class="kpi-val">2.418</div></div>
-        <div class="kpi"><div class="kpi-lbl">Novos este mês</div><div class="kpi-val g">+34</div></div>
-        <div class="kpi"><div class="kpi-lbl">Taxa de retenção</div><div class="kpi-val gold">87%</div></div>
-      </div>
-      <div class="chart-wrap">
-        <div class="chart-title">Prestadores por província</div>
-        <div class="prov-grid-admin" id="prov-list" style="margin-top:14px;margin-bottom:0"></div>
-      </div>
-    </div>
-
-    <!-- TAB: CONTA -->
-    <div class="tab-content" id="tab-conta">
-      <div class="acct-grid">
-        <div class="acct-card"><div class="acct-lbl">📱 Número M-Pesa para receber</div><div class="acct-val">842557495</div><div class="acct-sub">Wilad António Cherene da conta</div></div>
-        <div class="acct-card gold-c"><div class="acct-lbl">💵 Disponível para levantar</div><div class="acct-val" id="acct-levant">18.420 MT</div><div class="acct-sub">Actualizado agora</div></div>
-      </div>
-
-      <!-- SIMULAÇÃO DE LEVANTAMENTO -->
-      <div class="card" style="margin-bottom:16px">
-        <div class="card-title" style="font-size:18px;margin-bottom:4px">💸 Fazer levantamento</div>
-        <div class="card-sub">Simule a transferência do saldo para a sua conta.</div>
-        <div class="fg">
-          <label class="fl">Valor a levantar (MT) *</label>
-          <input class="fi" type="number" id="lev-valor" placeholder="Ex: 5000">
-        </div>
-        <div class="frow">
-          <div class="fg">
-            <label class="fl">Conta de destino *</label>
-            <select class="fi" id="lev-conta">
-              <option value="">Selecionar...</option>
-              <option>M-Pesa — 842557495</option>
-              <option>e-Mola — 863665947</option>
-              <option>Conta bancária</option>
-            </select>
-          </div>
-          <div class="fg">
-            <label class="fl">Banco (se aplicável)</label>
-            <select class="fi" id="lev-banco">
-              <option value="">Selecionar...</option>
-              <option>BCI</option>
-              <option>Millennium BIM</option>
-              <option>Standard Bank</option>
-              <option>Moza Banco</option>
-              <option>FNB Moçambique</option>
-            </select>
-          </div>
-        </div>
-        <div class="fg">
-          <label class="fl">Número de conta / IBAN</label>
-          <input class="fi" type="text" id="lev-iban" placeholder="Ex: MZ59 0000 0000 0000 0000 0000 0">
-        </div>
-        <div id="lev-msg" style="display:none;border-radius:10px;padding:14px;font-size:13px;margin-bottom:14px;text-align:center;line-height:1.6;"></div>
-        <button class="btn-full btn-full-g" style="padding:16px;font-size:16px;" onclick="simularLevantamento()">💸 Confirmar levantamento</button>
-      </div>
-
-      <div class="earn-note">
-        💡 <strong>Como funciona o pagamento:</strong> As subscrições são cobradas directamente via M-Pesa/e-Mola para o número registado. As renovações são automáticas todos os meses. Pode transferir o saldo para conta bancária a qualquer momento via M-Pesa Business.
-      </div>
-      <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr)">
-        <div class="kpi"><div class="kpi-lbl">Receita — Básico (100 MT)</div><div class="kpi-val">4.200 MT</div><div class="kpi-change">14 prestadores</div></div>
-        <div class="kpi"><div class="kpi-lbl">Receita — Pro (200 MT)</div><div class="kpi-val g">9.360 MT</div><div class="kpi-change">13 prestadores</div></div>
-        <div class="kpi"><div class="kpi-lbl">Receita — Premium (300 MT)</div><div class="kpi-val gold">4.860 MT</div><div class="kpi-change">4 prestadores</div></div>
-      </div>
-    </div>
-
-    <!-- TAB: CONFIGURAÇÕES -->
-    <div class="tab-content" id="tab-config">
-      <div class="card" style="margin-bottom:16px">
-        <div class="card-title" style="font-size:18px;margin-bottom:4px">👤 Dados do proprietário</div>
-        <div class="card-sub">As suas informações como dono da plataforma.</div>
-        <div class="frow">
-          <div class="fg"><label class="fl">Nome completo</label><input class="fi" type="text" id="cfg-nome" placeholder="Ex: João Silva"></div>
-          <div class="fg"><label class="fl">Email de contacto</label><input class="fi" type="email" id="cfg-email" placeholder="dono@gmail.com"></div>
-        </div>
-        <div class="frow">
-          <div class="fg"><label class="fl">Telemóvel / WhatsApp</label><input class="fi" type="tel" id="cfg-tel" placeholder="842557495"></div>
-          <div class="fg"><label class="fl">Nome da plataforma</label><input class="fi" type="text" id="cfg-plat" placeholder="Serviços Já Moz" value="Serviços Já Moz"></div>
-        </div>
-      </div>
-
-      <div class="card" style="margin-bottom:16px">
-        <div class="card-title" style="font-size:18px;margin-bottom:4px">📱 Pagamentos — Onde recebo</div>
-        <div class="card-sub">Número onde os prestadores irão pagar a subscrição.</div>
-        <div class="frow">
-          <div class="fg"><label class="fl">Número M-Pesa *</label><input class="fi" type="tel" id="cfg-mpesa" placeholder="842557495"></div>
-          <div class="fg"><label class="fl">Nome no M-Pesa *</label><input class="fi" type="text" id="cfg-mpesa-nome" placeholder="Wilad António Cherene"></div>
-        </div>
-        <div class="frow">
-          <div class="fg"><label class="fl">Número e-Mola</label><input class="fi" type="tel" id="cfg-emola" placeholder="863665947"></div>
-          <div class="fg"><label class="fl">Número mKesh</label><input class="fi" type="tel" id="cfg-mkesh" placeholder="77 XXX XXXX"></div>
-        </div>
-      </div>
-
-      <div class="card" style="margin-bottom:16px">
-        <div class="card-title" style="font-size:18px;margin-bottom:4px">💰 Preços dos planos</div>
-        <div class="card-sub">Defina quanto cada prestador paga por mês.</div>
-        <div class="frow" style="grid-template-columns:1fr 1fr 1fr">
-          <div class="fg"><label class="fl">Plano Básico (MT/mês)</label><input class="fi" type="number" id="cfg-p1" placeholder="300" value="100"></div>
-          <div class="fg"><label class="fl">Plano Profissional (MT/mês)</label><input class="fi" type="number" id="cfg-p2" placeholder="600" value="200"></div>
-          <div class="fg"><label class="fl">Plano Premium (MT/mês)</label><input class="fi" type="number" id="cfg-p3" placeholder="1200" value="300"></div>
-        </div>
-      </div>
-
-      <div class="card" style="margin-bottom:16px">
-        <div class="card-title" style="font-size:18px;margin-bottom:4px">📍 Cobertura geográfica</div>
-        <div class="card-sub">Seleccione as províncias onde a plataforma opera.</div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:4px" id="cfg-provs">
-          <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><input type="checkbox" checked> Maputo Cidade</label>
-          <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><input type="checkbox" checked> Maputo Prov.</label>
-          <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><input type="checkbox" checked> Gaza</label>
-          <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><input type="checkbox" checked> Inhambane</label>
-          <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><input type="checkbox" checked> Sofala</label>
-          <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><input type="checkbox" checked> Manica</label>
-          <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><input type="checkbox" checked> Tete</label>
-          <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><input type="checkbox" checked> Zambézia</label>
-          <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><input type="checkbox" checked> Nampula</label>
-          <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><input type="checkbox"> Cabo Delgado</label>
-          <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><input type="checkbox"> Niassa</label>
-        </div>
-      </div>
-
-      <div class="card" style="margin-bottom:16px">
-        <div class="card-title" style="font-size:18px;margin-bottom:4px">🔒 Segurança</div>
-        <div class="card-sub">Defina a palavra-passe para aceder a este painel.</div>
-        <div class="frow">
-          <div class="fg"><label class="fl">Nova palavra-passe</label><input class="fi" type="password" id="cfg-pass" placeholder="••••••••"></div>
-          <div class="fg"><label class="fl">Confirmar palavra-passe</label><input class="fi" type="password" id="cfg-pass2" placeholder="••••••••"></div>
-        </div>
-      </div>
-
-      <div id="cfg-msg" style="display:none;background:rgba(0,168,107,.1);border:1px solid rgba(0,168,107,.3);border-radius:10px;padding:14px;font-size:14px;color:var(--green);margin-bottom:14px;text-align:center;">
-        ✅ Configurações guardadas com sucesso!
-      </div>
-
-      <button class="btn-full btn-full-g" onclick="guardarConfig()">💾 Guardar configurações</button>
-    </div>
-
-    <button class="btn-full btn-full-o" style="margin-top:18px;" onclick="goTo('home')">← Voltar ao início</button>
-    <button class="btn-full btn-full-g" style="margin-top:8px;" onclick="iniciarRegisto()">+ Simular novo registo</button>
-  </div>
-</div>
+<!-- DOTS -->
+<div class="dots" id="dots"></div>
 
 <script>
-// ===== STATE =====
-let plan={name:'Profissional',price:200};
-let payMethod='mpesa';
-let payments=[];
-let activeConv='carlos';
-let convos={
-  carlos:{name:'Carlos Mondlane',av:'👨‍🔧',cls:'av1',status:'🟢 Online agora',msgs:[
-    {mine:false,text:'Olá! Vi o seu anúncio de electricista. Preciso de ajuda urgente.',time:'14:20'},
-    {mine:true,text:'Bom dia! Pode descrever o problema?',time:'14:21'},
-    {mine:false,text:'A minha sala de estar não tem luz desde ontem. Acho que é um disjuntor.',time:'14:25'},
-    {mine:true,text:'Entendi. Posso ver isso hoje à tarde, por volta das 17h. Serve?',time:'14:28'},
-    {mine:false,text:'Pode vir amanhã às 9h?',time:'14:32'},
+// ===== ESTADO =====
+let cur=0;
+let plano={nome:'Profissional',preco:200};
+let pagMetodo='mpesa';
+let pagamentos=[];
+let convActual='carlos';
+
+const SLIDES_LABELS=['Início','Pesquisar','Categorias','Prestadores','Como funciona',
+  'Plano','Dados','Pagamento','A processar','Confirmação','Chat','Painel','Acesso Dono'];
+const SLIDES_MAIN=[0,1,2,3,4,10,11,12]; // slides com dots
+
+// ===== CONVOS CHAT =====
+const convos={
+  carlos:{nome:'Carlos Mondlane',av:'👨‍🔧',cls:'av1',msgs:[
+    {m:false,t:'Olá! Preciso de ajuda com electricidade.',h:'14:20'},
+    {m:true,t:'Bom dia! Pode descrever o problema?',h:'14:21'},
+    {m:false,t:'A sala não tem luz desde ontem.',h:'14:25'},
+    {m:true,t:'Posso ver hoje às 17h. Serve?',h:'14:28'},
+    {m:false,t:'Pode vir amanhã às 9h?',h:'14:32'},
   ]},
-  fatima:{name:'Fátima Cossa',av:'👩‍💻',cls:'av2',status:'🟢 Online agora',msgs:[
-    {mine:false,text:'Boa tarde! Preciso de um logo para o meu negócio de catering.',time:'11:50'},
-    {mine:true,text:'Olá Fátima! Que tipo de estilo prefere? Moderno, clássico...?',time:'11:55'},
-    {mine:false,text:'Moderno e minimalista. Cores verdes e douradas.',time:'12:00'},
-    {mine:true,text:'Perfeito! Envio-lhe 3 propostas em 2 dias úteis.',time:'12:10'},
-    {mine:false,text:'Enviei o orçamento por email.',time:'12:15'},
+  fatima:{nome:'Fátima Cossa',av:'👩‍💻',cls:'av2',msgs:[
+    {m:false,t:'Preciso de um logo para o meu negócio.',h:'11:50'},
+    {m:true,t:'Que estilo prefere? Moderno ou clássico?',h:'11:55'},
+    {m:false,t:'Moderno. Cores verdes e douradas.',h:'12:00'},
+    {m:false,t:'Enviei o orçamento.',h:'12:15'},
   ]},
-  joao:{name:'João Machava',av:'🔧',cls:'av3',status:'⚫ Offline',msgs:[
-    {mine:false,text:'Tenho uma fuga de água no banheiro. Urgente!',time:'Seg 09:10'},
-    {mine:true,text:'Pode enviar uma foto para eu avaliar?',time:'Seg 09:15'},
-    {mine:false,text:'[Foto enviada]',time:'Seg 09:20'},
-    {mine:true,text:'Parece um problema no cano de abastecimento. Posso ver terça.',time:'Seg 09:30'},
-    {mine:false,text:'Ok, vejo o problema na terça.',time:'Seg 09:35'},
+  joao:{nome:'João Machava',av:'🔧',cls:'av3',msgs:[
+    {m:false,t:'Tenho uma fuga de água urgente!',h:'09:10'},
+    {m:true,t:'Pode enviar uma foto?',h:'09:15'},
+    {m:false,t:'[Foto enviada]',h:'09:20'},
+    {m:false,t:'Ok, vejo na terça.',h:'09:35'},
   ]},
-  ana:{name:'Ana Sitoe',av:'👩‍🍳',cls:'av4',status:'🟡 Ausente',msgs:[
-    {mine:false,text:'Olá! Faz catering para eventos corporativos?',time:'Dom 15:00'},
-    {mine:true,text:'Sim! Para quantas pessoas e que tipo de evento?',time:'Dom 15:05'},
-    {mine:false,text:'Quantas pessoas são no evento?',time:'Dom 15:10'},
+  ana:{nome:'Ana Sitoe',av:'👩‍🍳',cls:'av4',msgs:[
+    {m:false,t:'Faz catering para eventos?',h:'15:00'},
+    {m:true,t:'Sim! Quantas pessoas?',h:'15:05'},
+    {m:false,t:'Quantas pessoas são no evento?',h:'15:10'},
   ]},
 };
 
-// ===== NAVIGATION =====
-function goTo(id){
-  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  window.scrollTo(0,0);
-  if(id==='chat') renderChat(activeConv);
+// ===== PESQUISA =====
+const prestadores=[
+  {id:'carlos',nome:'Carlos Mondlane',role:'Electricista',av:'👨‍🔧',cls:'av1',av5:'4.9',trab:'147',local:'Maputo',preco:'800 MT/h',tel:'840000001',tags:['Electricidade','Instalações','Urgências']},
+  {id:'fatima',nome:'Fátima Cossa',role:'Designer Gráfica',av:'👩‍💻',cls:'av2',av5:'4.8',trab:'89',local:'Online',preco:'1.500 MT',tel:'860000002',tags:['Design','Logos','Branding']},
+  {id:'joao',nome:'João Machava',role:'Canalizador',av:'🔧',cls:'av3',av5:'4.7',trab:'203',local:'Matola',preco:'600 MT/h',tel:'870000003',tags:['Canalização','Fugas','Instalações']},
+  {id:'ana',nome:'Ana Sitoe',role:'Cozinheira',av:'👩‍🍳',cls:'av4',av5:'4.8',trab:'56',local:'Maputo',preco:'2.000 MT',tel:'840000004',tags:['Cozinheiro','Catering']},
+  {id:'mario',nome:'Mário Cumbe',role:'Carpinteiro',av:'🪚',cls:'av1',av5:'4.6',trab:'112',local:'Matola',preco:'700 MT/h',tel:'840000005',tags:['Carpintaria','Móveis']},
+  {id:'lucia',nome:'Lúcia Nhantumbo',role:'Explicadora',av:'👩‍🏫',cls:'av2',av5:'4.9',trab:'88',local:'Maputo',preco:'500 MT/h',tel:'840000006',tags:['Explicações','Matemática']},
+  {id:'pedro',nome:'Pedro Bila',role:'Pedreiro',av:'🧱',cls:'av3',av5:'4.5',trab:'167',local:'Gaza',preco:'600 MT/h',tel:'840000007',tags:['Pedreiro','Construção']},
+  {id:'rosa',nome:'Rosa Machel',role:'Esteticista',av:'💇',cls:'av4',av5:'4.9',trab:'234',local:'Maputo',preco:'800 MT',tel:'840000008',tags:['Beleza','Estética']},
+];
+
+// ===== NAVEGAÇÃO =====
+function ir(idx){
+  cur=Math.max(0,Math.min(idx,12));
+  const track=document.getElementById('track');
+  track.style.transform='translateX(-'+cur+'00vw)';
+  document.getElementById('tb-label').textContent=SLIDES_LABELS[cur]||'';
+  // Setas
+  document.getElementById('arrow-l').disabled=cur===0;
+  const regFlow=[5,6,7,8,9];
+  document.getElementById('arrow-r').disabled=cur===12||regFlow.includes(cur);
+  // Dots
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('on',SLIDES_MAIN[i]===cur));
+  // Chat
+  if(cur===10) renderChat(convActual);
+  // Scroll topo
+  setTimeout(()=>{
+    const s=document.getElementById('s'+cur);
+    if(s) s.scrollTop=0;
+  },50);
 }
 
-function iniciarRegisto(){goTo('registo');}
+function navL(){
+  const regFlow=[5,6,7,8,9];
+  if(regFlow.includes(cur)){
+    if(cur===5) ir(0); else ir(cur-1);
+  } else { if(cur>0) ir(cur-1); }
+}
+function navR(){
+  const regFlow=[5,6,7,8,9];
+  if(!regFlow.includes(cur)&&cur<12) ir(cur+1);
+}
 
-// ===== PLAN & PAYMENT =====
-function selectPlan(id,price){
+// ===== DOTS =====
+function initDots(){
+  const dotsEl=document.getElementById('dots');
+  SLIDES_MAIN.forEach((si,i)=>{
+    const d=document.createElement('div');
+    d.className='dot'+(i===0?' on':'');
+    d.onclick=()=>ir(si);
+    dotsEl.appendChild(d);
+  });
+}
+
+// ===== PESQUISA =====
+function pesq(){
+  const q=document.getElementById('sinput').value.trim().toLowerCase();
+  if(!q){alert('Escreva o que procura!');return;}
+  filtrar(q);
+}
+function pesqTag(tag){
+  document.getElementById('sinput').value=tag;
+  filtrar(tag.toLowerCase());
+  ir(1);
+}
+function filtrar(q){
+  const res=prestadores.filter(p=>
+    p.nome.toLowerCase().includes(q)||p.role.toLowerCase().includes(q)||
+    p.tags.some(t=>t.toLowerCase().includes(q))||p.local.toLowerCase().includes(q));
+  const sres=document.getElementById('sres');
+  const list=document.getElementById('sres-list');
+  const title=document.getElementById('sres-title');
+  sres.style.display='block';
+  if(!res.length){
+    title.textContent='Sem resultados para "'+q+'"';
+    list.innerHTML='<div style="text-align:center;color:var(--muted);padding:24px;font-size:13px;">😕 Tente outro termo.</div>';
+    return;
+  }
+  title.textContent=res.length+' prestador(es) encontrado(s)';
+  list.innerHTML=res.map(p=>`
+    <div class="prov-card">
+      <div class="ph"><div class="av ${p.cls}">${p.av}</div>
+        <div><div class="pname">${p.nome}</div><div class="prole">${p.role} · ${p.local}</div></div>
+        <div class="pbadge">✓</div></div>
+      <div class="pstats"><div><span class="psv">⭐ ${p.av5}</span><span class="psk">avaliação</span></div>
+        <div><span class="psv">${p.trab}</span><span class="psk">trabalhos</span></div></div>
+      <div class="pprice">desde <strong>${p.preco}</strong></div>
+      <div class="contact-btns">
+        <button class="cbtn cbtn-chat" onclick="abrirChat('${p.id}')">💬 Chat</button>
+        <a href="tel:+258${p.tel}" style="text-decoration:none;"><button class="cbtn cbtn-call" style="width:100%">📞 Ligar</button></a>
+        <a href="https://wa.me/258${p.tel}?text=Ol%C3%A1!+Vi+o+seu+perfil+no+Servi%C3%A7os+J%C3%A1+Moz." target="_blank" style="text-decoration:none;"><button class="cbtn cbtn-wa" style="width:100%">📱 WhatsApp</button></a>
+      </div>
+    </div>`).join('');
+}
+
+// ===== REGISTO =====
+function selPlano(id,preco){
   document.querySelectorAll('.plan').forEach(p=>p.classList.remove('selected'));
   document.getElementById('pl-'+id).classList.add('selected');
-  const names={basico:'Básico',pro:'Profissional',premium:'Premium'};
-  plan={name:names[id],price}; const prices={basico:100,pro:200,premium:300}; price=prices[id];
-  updateSummary();
+  const nomes={basico:'Básico',pro:'Profissional',premium:'Premium'};
+  const precos={basico:100,pro:200,premium:300};
+  plano={nome:nomes[id],preco:precos[id]};
+  actualizarSummary();
 }
-function updateSummary(){
-  const iva=Math.round(plan.price*0.17);
-  const total=plan.price+iva;
-  document.getElementById('sum-plano').textContent=plan.name;
-  document.getElementById('sum-preco').textContent=plan.price+' MT';
+function actualizarSummary(){
+  const iva=Math.round(plano.preco*0.17);
+  const total=plano.preco+iva;
+  document.getElementById('sum-p').textContent=plano.nome;
+  document.getElementById('sum-v').textContent=plano.preco+' MT';
   document.getElementById('sum-iva').textContent=iva+' MT';
-  document.getElementById('sum-total').textContent=total+' MT';
+  document.getElementById('sum-t').textContent=total+' MT';
 }
-function selectPay(m){
-  payMethod=m;
+function selPay(m){
+  pagMetodo=m;
   document.querySelectorAll('.pm').forEach(p=>p.classList.remove('selected'));
-  document.getElementById('pm-'+m).classList.add('selected');
+  document.getElementById('pm-'+m[0]).classList.add('selected');
   const t={mpesa:'📱 Dados M-Pesa',emola:'💳 Dados e-Mola',mkesh:'🏦 Dados mKesh'};
   document.getElementById('pay-title').textContent=t[m];
 }
@@ -1163,280 +977,235 @@ function validarDados(){
   const t=document.getElementById('inp-tel').value;
   const c=document.getElementById('inp-cat').value;
   const p=document.getElementById('inp-prov').value;
-  const d=document.getElementById('inp-distrito').value;
+  const d=document.getElementById('inp-dist').value;
   const b=document.getElementById('inp-bairro').value;
   if(!n||!t||!c||!p||!d||!b){alert('Por favor preencha todos os campos obrigatórios (*)');return;}
-  goTo('pagamento');
+  ir(7);
 }
-function iniciarPagamento(){
-  const num=document.getElementById('inp-pay-num').value;
-  if(!num){alert('Por favor insira o número de telemóvel para pagamento');return;}
+function pagar(){
+  const num=document.getElementById('inp-pay').value;
+  if(!num){alert('Por favor insira o número de telemóvel para pagamento.');return;}
   document.getElementById('proc-num').textContent=num;
-  goTo('processando');
-  setTimeout(()=>confirmarPagamento(num),3000);
+  ir(8);
+  setTimeout(()=>confirmarPag(num),3000);
 }
-function confirmarPagamento(num){
+function confirmarPag(num){
   const nome=document.getElementById('inp-nome').value;
-  const iva=Math.round(plan.price*0.17);
-  const total=plan.price+iva;
+  const iva=Math.round(plano.preco*0.17);
+  const total=plano.preco+iva;
   const ref='SJM'+Date.now().toString().slice(-8);
-  const metodos={mpesa:'M-Pesa',emola:'e-Mola',mkesh:'mKesh'};
+  const mets={mpesa:'M-Pesa',emola:'e-Mola',mkesh:'mKesh'};
   const agora=new Date();
   const prox=new Date(agora); prox.setMonth(prox.getMonth()+1);
   const fmt=d=>d.toLocaleDateString('pt-MZ');
   document.getElementById('suc-nome').textContent=nome;
   document.getElementById('rec-ref').textContent=ref;
-  document.getElementById('rec-plano').textContent=plan.name;
-  document.getElementById('rec-valor').textContent=total+' MT';
-  document.getElementById('rec-metodo').textContent=metodos[payMethod]+' · '+num;
-  document.getElementById('rec-data').textContent=fmt(agora);
-  document.getElementById('rec-renovacao').textContent=fmt(prox);
-  payments.push({nome,ref,plano:plan.name,valor:total,metodo:metodos[payMethod],data:fmt(agora)});
-  goTo('sucesso');
+  document.getElementById('rec-pl').textContent=plano.nome;
+  document.getElementById('rec-val').textContent=total+' MT';
+  document.getElementById('rec-met').textContent=mets[pagMetodo]+' · '+num;
+  document.getElementById('rec-dt').textContent=fmt(agora);
+  document.getElementById('rec-ren').textContent=fmt(prox);
+  pagamentos.push({nome,ref,plano:plano.nome,valor:total,metodo:mets[pagMetodo],data:fmt(agora)});
+  ir(9);
 }
 
 // ===== CHAT =====
-function abrirChat(id){activeConv=id;goTo('chat');}
-function selectConv(id){
-  activeConv=id;
-  document.querySelectorAll('.conv-item').forEach(c=>c.classList.remove('active'));
-  event.currentTarget.classList.add('active');
+function abrirChat(id){convActual=id;ir(10);}
+function selConv(id,el){
+  convActual=id;
+  document.querySelectorAll('.conv-item').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on');
   renderChat(id);
 }
 function renderChat(id){
   const c=convos[id];
   if(!c) return;
   document.getElementById('chat-av').textContent=c.av;
-  document.getElementById('chat-av').className='chat-hdr-av '+c.cls;
-  document.getElementById('chat-name').textContent=c.name;
-  document.querySelector('.chat-hdr-status').textContent=c.status;
-  const box=document.getElementById('chat-messages');
-  box.innerHTML=c.msgs.map(m=>`
-    <div class="msg ${m.mine?'mine':'theirs'}">
-      <div class="msg-bubble">${m.text}</div>
-      <div class="msg-time">${m.time}${m.mine?' · ✓✓':''}</div>
+  document.getElementById('chat-av').className='conv-av '+c.cls;
+  document.getElementById('chat-name').textContent=c.nome;
+  const box=document.getElementById('chat-box');
+  box.innerHTML=c.msgs.map(msg=>`
+    <div class="msg ${msg.m?'mine':'theirs'}">
+      <div class="msg-bubble">${msg.t}</div>
+      <div class="msg-time">${msg.h}${msg.m?' · ✓✓':''}</div>
     </div>`).join('');
   box.scrollTop=box.scrollHeight;
 }
-function handleKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();enviarMensagem();}}
-function enviarMensagem(){
-  const input=document.getElementById('chat-input-box');
-  const txt=input.value.trim();
+function enviar(){
+  const inp=document.getElementById('chat-inp');
+  const txt=inp.value.trim();
   if(!txt) return;
   const agora=new Date();
-  const h=agora.getHours().toString().padStart(2,'0');
-  const m=agora.getMinutes().toString().padStart(2,'0');
-  convos[activeConv].msgs.push({mine:true,text:txt,time:`${h}:${m}`});
-  input.value='';
-  renderChat(activeConv);
-  // Resposta automática após 1.5s
+  const h=agora.getHours().toString().padStart(2,'0')+':'+agora.getMinutes().toString().padStart(2,'0');
+  convos[convActual].msgs.push({m:true,t:txt,h});
+  inp.value='';
+  renderChat(convActual);
   setTimeout(()=>{
-    const box=document.getElementById('chat-messages');
-    const typing=document.createElement('div');
-    typing.className='msg theirs';
-    typing.innerHTML='<div class="typing"><span></span><span></span><span></span></div>';
-    box.appendChild(typing);
-    box.scrollTop=box.scrollHeight;
-    setTimeout(()=>{
-      const respostas=['Obrigado pela mensagem! Respondo em breve.','Entendido, vou verificar.','Pode contar comigo!','Vou confirmar e dar notícias.'];
-      const r=respostas[Math.floor(Math.random()*respostas.length)];
-      const hh=new Date().getHours().toString().padStart(2,'0');
-      const mm=new Date().getMinutes().toString().padStart(2,'0');
-      convos[activeConv].msgs.push({mine:false,text:r,time:`${hh}:${mm}`});
-      renderChat(activeConv);
-    },1200);
+    const rs=['Obrigado!','Entendido, respondo em breve.','Pode contar comigo!','Vou verificar.'];
+    const r=rs[Math.floor(Math.random()*rs.length)];
+    const h2=new Date().getHours().toString().padStart(2,'0')+':'+new Date().getMinutes().toString().padStart(2,'0');
+    convos[convActual].msgs.push({m:false,t:r,h:h2});
+    renderChat(convActual);
   },1500);
 }
 
 // ===== ADMIN =====
-function switchTab(id){
-  document.querySelectorAll('.atab').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
-  event.currentTarget.classList.add('active');
-  document.getElementById('tab-'+id).classList.add('active');
-}
-function verAdmin(){
-  // Só o dono pode aceder — redireciona para login
-  goTo('login-dono');
+function abaAdmin(id,el){
+  document.querySelectorAll('.atab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('on'));
+  el.classList.add('on');
+  document.getElementById('tab-'+id).classList.add('on');
 }
 function renderCharts(){
   const meses=['Jan','Fev','Mar','Abr','Mai','Jun'];
   const vals=[9200,11400,13800,15200,16900,18420];
   const max=Math.max(...vals);
-  document.getElementById('chart-bars').innerHTML=meses.map((m,i)=>`
+  const cb=document.getElementById('chart-bars');
+  if(cb) cb.innerHTML=meses.map((m,i)=>`
     <div class="bar-col">
       <div class="bar-val">${(vals[i]/1000).toFixed(0)}k</div>
-      <div class="bar" style="height:${(vals[i]/max*80)}px"></div>
+      <div class="bar" style="height:${(vals[i]/max*70)}px"></div>
       <div class="bar-lbl">${m}</div>
     </div>`).join('');
   const provs=[
     {n:'Maputo Cidade',c:842,pct:100},{n:'Matola',c:623,pct:74},
     {n:'Nampula',c:287,pct:34},{n:'Beira',c:241,pct:29},
-    {n:'Tete',c:156,pct:19},{n:'Inhambane',c:98,pct:12},
   ];
-  const html=provs.map(p=>`
+  const pp=document.getElementById('prov-provs');
+  if(pp) pp.innerHTML=provs.map(p=>`
     <div class="prov-item">
       <div class="prov-name">${p.n}</div>
       <div class="prov-bar-bg"><div class="prov-bar-fill" style="width:${p.pct}%"></div></div>
       <div class="prov-count">${p.c} prestadores</div>
     </div>`).join('');
-  document.getElementById('prov-provs').innerHTML=html;
-  document.getElementById('prov-list').innerHTML=html;
 }
-
-// ===== LEVANTAMENTO =====
-function simularLevantamento(){
-  const valor=parseFloat(document.getElementById('lev-valor').value);
+function levantamento(){
+  const val=parseFloat(document.getElementById('lev-val').value);
   const conta=document.getElementById('lev-conta').value;
   const msg=document.getElementById('lev-msg');
-  if(!valor||valor<=0){alert('Por favor insira um valor válido.');return;}
-  if(!conta){alert('Por favor seleccione a conta de destino.');return;}
-  const disponivel=parseFloat(document.getElementById('acct-levant').textContent.replace(/[^\d]/g,''));
-  if(valor>disponivel){
+  if(!val||val<=0){alert('Insira um valor válido.');return;}
+  if(!conta){alert('Seleccione a conta de destino.');return;}
+  const disp=parseFloat(document.getElementById('acct-lev').textContent.replace(/[^\d]/g,''));
+  if(val>disp){
     msg.style.display='block';
     msg.style.background='rgba(206,17,38,.1)';
     msg.style.border='1px solid rgba(206,17,38,.3)';
     msg.style.color='#ff6b6b';
-    msg.innerHTML='❌ Saldo insuficiente. Disponível: <strong>'+disponivel.toLocaleString('pt-MZ')+' MT</strong>';
+    msg.innerHTML='❌ Saldo insuficiente. Disponível: '+disp.toLocaleString('pt-MZ')+' MT';
     return;
   }
-  // Simular processamento
   msg.style.display='block';
   msg.style.background='rgba(245,166,35,.1)';
   msg.style.border='1px solid rgba(245,166,35,.3)';
-  msg.style.color='var(--gold)';
-  msg.innerHTML='⏳ A processar transferência para '+conta+'...';
+  msg.style.color='var(--go)';
+  msg.innerHTML='⏳ A processar...';
   setTimeout(()=>{
-    const novoSaldo=disponivel-valor;
-    document.getElementById('acct-levant').textContent=novoSaldo.toLocaleString('pt-MZ')+' MT';
+    document.getElementById('acct-lev').textContent=(disp-val).toLocaleString('pt-MZ')+' MT';
     msg.style.background='rgba(0,168,107,.1)';
     msg.style.border='1px solid rgba(0,168,107,.3)';
-    msg.style.color='var(--green)';
-    msg.innerHTML='✅ Levantamento de <strong>'+valor.toLocaleString('pt-MZ')+' MT</strong> enviado para <strong>'+conta+'</strong> com sucesso!<br><small>Referência: LEV'+Date.now().toString().slice(-8)+'</small>';
-    document.getElementById('lev-valor').value='';
+    msg.style.color='var(--g)';
+    msg.innerHTML='✅ '+val.toLocaleString('pt-MZ')+' MT enviados para '+conta+'!<br><small>Ref: LEV'+Date.now().toString().slice(-8)+'</small>';
+    document.getElementById('lev-val').value='';
   },2500);
 }
 
-// ===== TEMA =====
-function toggleTheme(){
-  document.body.classList.toggle('light');
-  const btn=document.getElementById('theme-btn');
-  const isLight=document.body.classList.contains('light');
-  btn.textContent=isLight?'🌙':'☀️';
-  localStorage.setItem('sjm-theme', isLight?'light':'dark');
-}
-function carregarTema(){
-  const tema=localStorage.getItem('sjm-theme');
-  if(tema==='light'){
-    document.body.classList.add('light');
-    document.getElementById('theme-btn').textContent='🌙';
-  }
-}
-
 // ===== LOGIN DONO =====
-function abrirLoginDono(){goTo('login-dono');}
 function loginDono(){
-  const email=document.getElementById('dono-email').value.trim();
-  const pass=document.getElementById('dono-pass').value;
-  const cfg=JSON.parse(localStorage.getItem('sjm-config')||'{}');
-  const emailCorreto = cfg.email || 'wilaryecacicaci@gmail.com';
-  const passCorreta = cfg.senha || 'admin123';
-  const erro=document.getElementById('login-erro');
-  if(email===emailCorreto && pass===passCorreta){
-    erro.style.display='none';
-    // Actualizar painel com dados reais
-    const total=18420+payments.reduce((s,p)=>s+p.valor,0);
-    const prest=2418+payments.length;
-    document.getElementById('kpi-receita').textContent=total.toLocaleString('pt-MZ')+' MT';
-    document.getElementById('kpi-prest').textContent=prest;
-    document.getElementById('acct-levant').textContent=total.toLocaleString('pt-MZ')+' MT';
-    if(payments.length>0){
-      const tbl=document.getElementById('pagamentos-table');
-      payments.forEach(p=>{
-        const bp=p.plano==='Básico'?'bp-basico':p.plano==='Premium'?'bp-premium':'bp-pro';
+  const email=document.getElementById('l-email').value.trim();
+  const pass=document.getElementById('l-pass').value;
+  const cfg=JSON.parse(localStorage.getItem('sjm-cfg')||'{}');
+  const eOk=cfg.email||'wilaryecacicaci@gmail.com';
+  const pOk=cfg.senha||'admin123';
+  const err=document.getElementById('login-err');
+  if(email===eOk&&pass===pOk){
+    err.style.display='none';
+    const total=18420+pagamentos.reduce((s,p)=>s+p.valor,0);
+    const prest=2418+pagamentos.length;
+    const kr=document.getElementById('kpi-rec');
+    const kp=document.getElementById('kpi-pre');
+    if(kr) kr.textContent=total.toLocaleString('pt-MZ')+' MT';
+    if(kp) kp.textContent=prest;
+    const al=document.getElementById('acct-lev');
+    if(al) al.textContent=total.toLocaleString('pt-MZ')+' MT';
+    if(pagamentos.length>0){
+      const tbl=document.getElementById('pag-table');
+      pagamentos.forEach(p=>{
+        const bp=p.plano==='Básico'?'bp-b':p.plano==='Premium'?'bp-pr':'bp-p';
         const row=document.createElement('div');
         row.className='t-row';
-        row.innerHTML=`<span>${p.nome}</span><span><div class="badge-plan ${bp}">${p.plano}</div></span><span style="color:var(--green);font-weight:700">${p.valor} MT</span><span>${p.metodo}</span><span><div class="badge-status bs-ativo">Ativo</div></span>`;
-        tbl.insertBefore(row,tbl.firstChild);
+        row.innerHTML=`<span>${p.nome}</span><span><div class="badge-plan ${bp}">${p.plano}</div></span><span style="color:var(--g);font-weight:700">${p.valor} MT</span>`;
+        if(tbl) tbl.insertBefore(row,tbl.firstChild);
       });
     }
     renderCharts();
-    goTo('admin');
+    ir(11);
   } else {
-    erro.style.display='block';
-    document.getElementById('dono-pass').value='';
+    err.style.display='block';
+    document.getElementById('l-pass').value='';
   }
 }
 
-// ===== CONFIGURAÇÕES =====
-function guardarConfig(){
+// ===== CONFIG =====
+function guardarCfg(){
   const pass=document.getElementById('cfg-pass').value;
   const pass2=document.getElementById('cfg-pass2').value;
-  if(pass && pass!==pass2){alert('As palavras-passe não coincidem!');return;}
-  // Guardar em localStorage
+  if(pass&&pass!==pass2){alert('As senhas não coincidem!');return;}
   const cfg={
-    nome:document.getElementById('cfg-nome').value,
-    email:document.getElementById('cfg-email').value,
+    email:document.getElementById('cfg-email').value||'wilaryecacicaci@gmail.com',
     senha:pass||'admin123',
-    tel:document.getElementById('cfg-tel').value,
-    plat:document.getElementById('cfg-plat').value,
     mpesa:document.getElementById('cfg-mpesa').value,
-    mpesaNome:document.getElementById('cfg-mpesa-nome').value,
     emola:document.getElementById('cfg-emola').value,
-    mkesh:document.getElementById('cfg-mkesh').value,
     p1:document.getElementById('cfg-p1').value,
     p2:document.getElementById('cfg-p2').value,
     p3:document.getElementById('cfg-p3').value,
   };
-  localStorage.setItem('sjm-config',JSON.stringify(cfg));
-  // Aplicar preços aos planos
-  if(cfg.p1) document.querySelector('#pl-basico .plan-price').textContent=cfg.p1;
-  if(cfg.p2) document.querySelector('#pl-pro .plan-price').textContent=cfg.p2;
-  if(cfg.p3) document.querySelector('#pl-premium .plan-price').textContent=cfg.p3;
-  // Aplicar número M-Pesa no painel
-  if(cfg.mpesa){
-    document.querySelector('.acct-card .acct-val').textContent=cfg.mpesa;
-    document.querySelector('.acct-card .acct-sub').textContent=cfg.mpesaNome||'Titular da conta';
-  }
-  // Mostrar mensagem de sucesso
-  const msg=document.getElementById('cfg-msg');
-  msg.style.display='block';
-  setTimeout(()=>msg.style.display='none',3000);
+  localStorage.setItem('sjm-cfg',JSON.stringify(cfg));
+  const ok=document.getElementById('cfg-ok');
+  if(ok){ok.style.display='block';setTimeout(()=>ok.style.display='none',3000);}
 }
-function carregarConfig(){
+function carregarCfg(){
   try{
-    const cfg=JSON.parse(localStorage.getItem('sjm-config')||'{}');
-    if(cfg.nome) document.getElementById('cfg-nome').value=cfg.nome;
-    if(cfg.email) document.getElementById('cfg-email').value=cfg.email;
-    if(cfg.tel) document.getElementById('cfg-tel').value=cfg.tel;
-    if(cfg.plat) document.getElementById('cfg-plat').value=cfg.plat;
-    if(cfg.mpesa) document.getElementById('cfg-mpesa').value=cfg.mpesa;
-    if(cfg.mpesaNome) document.getElementById('cfg-mpesa-nome').value=cfg.mpesaNome;
-    if(cfg.emola) document.getElementById('cfg-emola').value=cfg.emola;
-    if(cfg.mkesh) document.getElementById('cfg-mkesh').value=cfg.mkesh;
-    if(cfg.p1) document.getElementById('cfg-p1').value=cfg.p1;
-    if(cfg.p2) document.getElementById('cfg-p2').value=cfg.p2;
-    if(cfg.p3) document.getElementById('cfg-p3').value=cfg.p3;
+    const cfg=JSON.parse(localStorage.getItem('sjm-cfg')||'{}');
+    const map={email:'cfg-email',mpesa:'cfg-mpesa',emola:'cfg-emola',p1:'cfg-p1',p2:'cfg-p2',p3:'cfg-p3'};
+    Object.entries(map).forEach(([k,id])=>{const el=document.getElementById(id);if(el&&cfg[k])el.value=cfg[k];});
   }catch(e){}
 }
-
-// ===== NOTIFICAÇÕES =====
-function toggleNotif(){
-  const p=document.getElementById('notif-panel');
-  p.classList.toggle('open');
-  document.getElementById('notif-dot').style.display='none';
+function toggleTema(){
+  document.body.classList.toggle('light');
+  const isLight=document.body.classList.contains('light');
+  document.getElementById('tb-theme').textContent=isLight?'🌙':'☀️';
+  localStorage.setItem('sjm-tema',isLight?'light':'dark');
 }
-document.addEventListener('click',e=>{
-  const p=document.getElementById('notif-panel');
-  if(!p.contains(e.target)&&!e.target.closest('.notif-btn')) p.classList.remove('open');
-});
-
-// ===== INIT =====
-updateSummary();
+function carregarTema(){
+  if(localStorage.getItem('sjm-tema')==='light'){
+    document.body.classList.add('light');
+    document.getElementById('tb-theme').textContent='🌙';
+  }
+}
+function initSwipe(){
+  const wrap=document.querySelector('.slides-wrap');
+  let sx=0,sy=0;
+  wrap.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY;},{passive:true});
+  wrap.addEventListener('touchend',e=>{
+    const regFlow=[5,6,7,8,9];
+    if(regFlow.includes(cur)) return;
+    const dx=sx-e.changedTouches[0].clientX;
+    const dy=Math.abs(sy-e.changedTouches[0].clientY);
+    if(Math.abs(dx)>60&&dy<80){dx>0?navR():navL();}
+  },{passive:true});
+}
+document.getElementById('tb-logo').onclick=()=>ir(0);
+document.getElementById('arrow-l').onclick=navL;
+document.getElementById('arrow-r').onclick=navR;
+document.getElementById('tb-theme').onclick=toggleTema;
+actualizarSummary();
 renderCharts();
 renderChat('carlos');
-carregarConfig();
+carregarCfg();
 carregarTema();
+initDots();
+initSwipe();
+ir(0);
 </script>
 </body>
 </html>
