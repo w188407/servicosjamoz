@@ -28,7 +28,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--white);
   color:var(--g);font-size:20px;cursor:pointer;
   display:flex;align-items:center;justify-content:center;transition:all .2s;}
 .tb-arrow:hover{background:var(--g);color:#fff;}
-.tb-arrow:disabled{opacity:0.2;pointer-events:none;}
+.tb-arrow:disabled{opacity:0.2;}
 .tb-label{font-size:12px;font-weight:500;color:var(--muted);min-width:72px;text-align:center;}
 .tb-theme{width:36px;height:36px;border-radius:50%;
   background:transparent;border:1px solid var(--border);
@@ -895,9 +895,15 @@ function ir(idx){
   const track=document.getElementById('track');
   track.style.transform='translateX(-'+cur+'00vw)';
   document.getElementById('tb-label').textContent=SLIDES_LABELS[cur]||'';
-  document.getElementById('arrow-l').disabled=cur===0;
+  const arrowL=document.getElementById('arrow-l');
+  const arrowR=document.getElementById('arrow-r');
   const regFlow=[5,6,7,8,9,13];
-  document.getElementById('arrow-r').disabled=cur===13||regFlow.includes(cur);
+  // Seta esquerda — desactivada só no slide 0
+  arrowL.disabled=cur===0;
+  arrowL.style.opacity=cur===0?'0.2':'1';
+  // Seta direita — desactivada durante registo e no último slide
+  arrowR.disabled=cur===13||regFlow.includes(cur);
+  arrowR.style.opacity=(cur===13||regFlow.includes(cur))?'0.2':'1';
   document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('on',SLIDES_MAIN[i]===cur));
   if(cur===10) renderChat(convActual);
   setTimeout(()=>{
