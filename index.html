@@ -1252,22 +1252,59 @@ function guardarCfg(){
   if(pass&&pass!==pass2){alert('As senhas não coincidem!');return;}
   const cfg={
     email:document.getElementById('cfg-email').value||'wilaryecacicaci@gmail.com',
-    senha:pass||'admin123',
-    mpesa:document.getElementById('cfg-mpesa').value,
-    emola:document.getElementById('cfg-emola').value,
-    p1:document.getElementById('cfg-p1').value,
-    p2:document.getElementById('cfg-p2').value,
-    p3:document.getElementById('cfg-p3').value,
+    senha:pass||JSON.parse(localStorage.getItem('sjm-cfg')||'{}').senha||'admin123',
+    mpesa:document.getElementById('cfg-mpesa').value||'842557495',
+    emola:document.getElementById('cfg-emola').value||'863665947',
+    p1:document.getElementById('cfg-p1').value||'100',
+    p2:document.getElementById('cfg-p2').value||'200',
+    p3:document.getElementById('cfg-p3').value||'300',
   };
   localStorage.setItem('sjm-cfg',JSON.stringify(cfg));
+
+  // Actualizar planos no registo
+  const p1=parseInt(cfg.p1);
+  const p2=parseInt(cfg.p2);
+  const p3=parseInt(cfg.p3);
+  const plBasico=document.getElementById('pl-basico');
+  const plPro=document.getElementById('pl-pro');
+  const plPremium=document.getElementById('pl-premium');
+  if(plBasico) plBasico.querySelector('.plan-price').textContent=p1;
+  if(plPro) plPro.querySelector('.plan-price').textContent=p2;
+  if(plPremium) plPremium.querySelector('.plan-price').textContent=p3;
+
+  // Actualizar números M-Pesa no painel
+  const acctMpesa=document.getElementById('acct-mpesa');
+  if(acctMpesa) acctMpesa.textContent=cfg.mpesa;
+
+  // Actualizar plano actual
+  plano={nome:plano.nome, preco:plano.nome==='Básico'?p1:plano.nome==='Premium'?p3:p2};
+  actualizarSummary();
+
   const ok=document.getElementById('cfg-ok');
   if(ok){ok.style.display='block';setTimeout(()=>ok.style.display='none',3000);}
 }
+
 function carregarCfg(){
   try{
     const cfg=JSON.parse(localStorage.getItem('sjm-cfg')||'{}');
-    const map={email:'cfg-email',mpesa:'cfg-mpesa',emola:'cfg-emola',p1:'cfg-p1',p2:'cfg-p2',p3:'cfg-p3'};
-    Object.entries(map).forEach(([k,id])=>{const el=document.getElementById(id);if(el&&cfg[k])el.value=cfg[k];});
+    // Preencher campos config
+    if(cfg.email) document.getElementById('cfg-email').value=cfg.email;
+    if(cfg.mpesa) document.getElementById('cfg-mpesa').value=cfg.mpesa;
+    if(cfg.emola) document.getElementById('cfg-emola').value=cfg.emola;
+    if(cfg.p1) document.getElementById('cfg-p1').value=cfg.p1;
+    if(cfg.p2) document.getElementById('cfg-p2').value=cfg.p2;
+    if(cfg.p3) document.getElementById('cfg-p3').value=cfg.p3;
+
+    // Actualizar planos visivelmente
+    if(cfg.p1){const el=document.getElementById('pl-basico');if(el)el.querySelector('.plan-price').textContent=cfg.p1;}
+    if(cfg.p2){const el=document.getElementById('pl-pro');if(el)el.querySelector('.plan-price').textContent=cfg.p2;}
+    if(cfg.p3){const el=document.getElementById('pl-premium');if(el)el.querySelector('.plan-price').textContent=cfg.p3;}
+
+    // Actualizar M-Pesa no painel
+    if(cfg.mpesa){const el=document.getElementById('acct-mpesa');if(el)el.textContent=cfg.mpesa;}
+
+    // Actualizar summary com preços correctos
+    if(cfg.p2){plano.preco=parseInt(cfg.p2);actualizarSummary();}
   }catch(e){}
 }
 function toggleTema(){
@@ -1309,5 +1346,5 @@ initSwipe();
 ir(0);
 </script>
 </body>
-                                           </html>
-                        
+  </html>
+      
