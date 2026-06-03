@@ -363,7 +363,13 @@ body.light .hero-btns .btn-o{background:rgba(0,0,0,.06);border-color:rgba(0,0,0,
     <span class="tb-label" id="tb-label">Início</span>
     <button class="tb-arrow" id="arrow-r">›</button>
   </div>
-  <button class="tb-theme" id="tb-theme">🌙</button>
+  <div style="display:flex;gap:6px;align-items:center;">
+    <button class="tb-theme" id="tb-theme">🌙</button>
+    <button onclick="ir(12)" style="padding:6px 12px;border-radius:50px;
+      background:rgba(0,168,107,0.15);border:1px solid rgba(0,168,107,0.4);
+      color:var(--g);font-size:12px;font-weight:600;cursor:pointer;
+      font-family:'DM Sans',sans-serif;">🔐 Dono</button>
+  </div>
 </div>
 
 <!-- SLIDES -->
@@ -1301,5 +1307,5 @@ initSwipe();
 ir(0);
 </script>
 </body>
-      </html>
-    
+  </html>
+  
