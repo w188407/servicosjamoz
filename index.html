@@ -1078,25 +1078,44 @@ function abrirChat(id){
   ir(10);
 }
 
-function loginCliente(){
+async function loginCliente(){
   const nome=document.getElementById('cl-nome').value.trim();
   const tel=document.getElementById('cl-tel').value.trim();
+  const email=document.getElementById('cl-email').value.trim();
+  const senha=document.getElementById('cl-senha').value.trim();
   const err=document.getElementById('cl-err');
-  if(!nome||!tel){err.style.display='block';return;}
+  if(!nome||!tel||!senha){err.style.display='block';err.textContent='❌ Preencha nome, telefone e senha';return;}
   err.style.display='none';
-  clienteLogado=true;
-  clienteNome=nome;
-  // Guardar em localStorage
-  localStorage.setItem('sjm-cliente',JSON.stringify({nome,tel,email:document.getElementById('cl-email').value}));
-  // Actualizar topbar
-  document.getElementById('tb-logo').title='Olá, '+nome;
-  // Ir para o chat com o prestador pendente
-  if(chatPendente){
-    convActual=chatPendente;
-    chatPendente='';
-    ir(10);
-  } else {
-    ir(10);
+  try{
+    // Tenta login primeiro
+    let res=await fetch('https://servicosjamoz-backend.onrender.com/api/auth/login',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({telefone:tel,senha})
+    });
+    let data=await res.json();
+    if(!res.ok){
+      // Se não existir, regista automaticamente
+      res=await fetch('https://servicosjamoz-backend.onrender.com/api/auth/registo',{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({nome,telefone:tel,senha,tipo:'cliente'})
+      });
+      data=await res.json();
+      if(!res.ok){err.style.display='block';err.textContent='❌ '+(data.erro||'Erro ao criar conta');return;}
+      // Faz login depois de registar
+      res=await fetch('https://servicosjamoz-backend.onrender.com/api/auth/login',{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({telefone:tel,senha})
+      });
+      data=await res.json();
+    }
+    clienteLogado=true;
+    clienteNome=nome;
+    localStorage.setItem('sjm-cliente',JSON.stringify({nome,tel,email,token:data.token}));
+    document.getElementById('tb-logo').textContent='Olá, '+nome;
+    if(chatPendente){convActual=chatPendente;chatPendente='';ir(10);}else{ir(10);}
+  }catch(e){
+    err.style.display='block';
+    err.textContent='❌ Erro de ligação. Tenta outra vez.';
   }
 }
 
